@@ -16,30 +16,42 @@ description: Sync the official Stanford assignments repository into the local `r
 - 若目录不存在，执行首次克隆。
 - 若目录存在，先确认其是否为 git 仓库。
 
-### 2) 初始化子模块（首次使用）
+### 2) 准备上游快照（本地临时目录）
+- 使用临时目录进行同步，例如：`/tmp/office-code-upstream`。
 ```bash
-git submodule update --init --recursive
+git clone https://github.com/mihail911/modern-software-dev-assignments /tmp/office-code-upstream
 ```
 
 ### 3) 更新前检查（目录已存在时）
-- 检查是否有未提交修改：
+- 若 `references/office-code/` 有本地改动，先手动备份或复制一份。
+- 可选：与临时目录做快速对比：
   ```bash
-  git -C references/office-code status --porcelain
+  diff -rq references/office-code /tmp/office-code-upstream
   ```
-- 若有输出，停止更新并询问用户是否要提交/暂存/放弃修改。
 
-### 4) 拉取最新代码（无本地改动时）
+### 4) 拉取最新代码（更新临时目录）
 ```bash
-git -C references/office-code fetch origin
-git -C references/office-code pull --ff-only
+git -C /tmp/office-code-upstream fetch origin
+git -C /tmp/office-code-upstream reset --hard origin/master
 ```
 
 ### 5) 记录同步信息
 - 输出当前版本：
   ```bash
-  git -C references/office-code log -1 --oneline
+  git -C /tmp/office-code-upstream log -1 --oneline
   ```
 - 将同步结果写入当日 `docs/WORKLOG/YYYY-MM-DD.md`。
+
+### 6) 覆盖本地快照
+- 使用 `rsync` 同步（会删除本地多余文件）：
+  ```bash
+  rsync -a --delete --exclude .git /tmp/office-code-upstream/ references/office-code/
+  ```
+- 若无 `rsync`，可先备份再覆盖：
+  ```bash
+  rm -rf references/office-code/*
+  cp -R /tmp/office-code-upstream/* references/office-code/
+  ```
 
 ## Notes
 - `references/office-code/` 视为官方快照目录，默认不直接修改其中代码。

@@ -32,7 +32,6 @@
 
 ## 6. 素材与引用
 - Stanford 官方代码以 `references/office-code/` 为准，课程讲义撰写时必须对照官方实现。
-- `references/office-code/` 为 git submodule，首次克隆后需执行 `git submodule update --init --recursive`。
 - `curriculum/Stanford CS146S/` 内以讲义与课程材料为主，不作为官方代码来源。
 - `references/ng_lesson/` 作为并行参考，优先补齐主线 1 的 Python 基础。
 - 引用时标注文件路径，避免无出处的信息拼贴。

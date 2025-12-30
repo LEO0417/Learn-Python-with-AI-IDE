@@ -11,5 +11,5 @@
 
 ## 结构
 - 课程内容：`curriculum/`
-- 官方快照：`references/office-code/`（submodule，需 `git submodule update --init --recursive`）
+- 官方快照：`references/office-code/`
 - 参考课程：`references/ng_lesson/`
