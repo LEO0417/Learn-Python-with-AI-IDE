@@ -1,27 +1,15 @@
-# Assignments for CS146S: The Modern Software Developer
+# Learn Python with AI IDE
 
-This is the home of the assignments for [CS146S: The Modern Software Developer](https://themodernsoftware.dev), taught at Stanford University fall 2025.
+零基础可读、可跑、可复现的双主线课程项目。
 
-## Repo Setup
-These steps work with Python 3.12.
+## 入口
+- 行动指南：`docs/ACTION_GUIDE.md`
+- 映射表：`docs/MAPPING.md`
+- 周任务：`docs/WEEK1_TASKS.md`
+- 工作日志：`docs/WORKLOG/`
+- 本地技能：`skills/`
 
-1. Install Anaconda
-   - Download and install: [Anaconda Individual Edition](https://www.anaconda.com/download)
-   - Open a new terminal so `conda` is on your `PATH`.
-
-2. Create and activate a Conda environment (Python 3.12)
-   ```bash
-   conda create -n cs146s python=3.12 -y
-   conda activate cs146s
-   ```
-
-3. Install Poetry
-   ```bash
-   curl -sSL https://install.python-poetry.org | python -
-   ```
-
-4. Install project dependencies with Poetry (inside the activated Conda env)
-   From the repository root:
-   ```bash
-   poetry install --no-interaction
-   ```
+## 结构
+- 课程内容：`curriculum/`
+- 官方快照：`references/office-code/`（submodule，需 `git submodule update --init --recursive`）
+- 参考课程：`references/ng_lesson/`

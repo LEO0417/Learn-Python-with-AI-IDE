@@ -1,0 +1,3 @@
+[submodule "references/office-code"]
+	path = references/office-code
+	url = https://github.com/mihail911/modern-software-dev-assignments
