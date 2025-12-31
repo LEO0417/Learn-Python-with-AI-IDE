@@ -1,228 +1,217 @@
-# Lesson 2: Built-in packages
+# Install Python on your computer (Optional)
 
-In this lesson, you'll learn how to work with **packages** (sometimes called **modules**) that are built-in to Python.
+As you have seen in this course, Python is one of the most popular programming languages. To easily write and run Python programs on your computer, you need a code editor like the Jupyter Notebook used in the learning platform.
 
-These packages contain functions that can be made available in your programs using the same `import` statements you learned in the last lesson.
+A convenient way to get everything you need is by downloading [Anaconda](https://www.anaconda.com), which provides Python, Jupyter Notebook, and many other tools in a single installation. In this tutorial, you will see how to download and install Anaconda on your computer, how to create a Jupyter notebook, and how to get your own API keys from OpenWeather and OpenAI.
 
-## The `math` package
+For more detailed installation instructions specific to your operating system, or if you encounter any problems, please visit [this link](https://docs.anaconda.com/anaconda/install/).
 
-Imagine that you want to show your neighbor's kid how to double-check his trigonometry homework using Python.
+# Downloading Anaconda
 
-Python contains functions in the ```math``` package that can let you do trigonometry. Let's load the ```cos, sin``` and ```pi``` functions and use them.
+Go to [Anaconda](https://www.anaconda.com) and:
 
-You make these functions available with the following code:
+1. Click on "Free Download"
+   
+   <img src="free_download.png" alt="Free Download" style="width:40%;"/>
 
-```python
-# Import from the math package the cos, sin and pi functions
-from math import cos, sin, pi
-```
+2. Register your information or skip that step
 
-The `pi` you just loaded isn't actually a function, it's a single number:
+   <img src="skip.png" alt="Skip" style="width:40%;"/>
 
-```python
-print(pi)
-```
+3. Click on the download button
 
-You can check the data type using the `type` function:
+   <img src="download.png" alt="Download" style="width:40%;"/>
 
-```python
-type(pi)
-```
+These steps will usually get you the appropriate distribution for your operating system. If it doesn't provide you with the correct distribution, you can check the list under **Anaconda installers** and find the one that best suits you.
 
-Next, define a list of values for which you want to compute ```cos``` and ```sin```:
+# Installing Anaconda
 
-```python
-values = [0, pi/2, pi, 3/2*pi, 2*pi]
-```
+### MacOS
 
-Iterate through the list of values using a ```for``` loop and calculate the ```cos``` function for each value:
+Anaconda provides a graphical installer that is fairly easy to follow in macOS. After you open the installer, you simply have to follow the prompts. The steps you will need to follow will be similar to the ones outlined here:
 
-```python
-for value in values:
-    print(f"The cosine of {value:.2f} is {cos(value):.2f}")
-```
+1. Read the introduction, click Continue.
+2. Read the Read Me document, click Continue.
+3. Read and accept the license agreement.
+4. Select the installation destination. Anaconda recommends that you select the first option "Install for all users on this computer." Click Continue.
 
-### Try for yourself!
+   <img src="mac_destination.png" alt="Installation Destination" style="width:40%;"/>
 
-Pause the video and update the code below to calculate the sine instead of cosine!
+5. Click Install.
 
-```python
-for value in values:
-    print(f"The sine of {value:.2f} is {cos(value):.2f}")
-```
+   <img src="mac_install.png" alt="Install" style="width:40%;"/>
 
-The `math` package contains a function called `floor` that rounds values down to the nearest whole number. 
+6. After the installation is complete, click Continue.
+7. You will be prompted with the option to learn more about Anaconda in the cloud. Feel free to skip and click Continue.
 
-Try the code below to use it 
-* 🚨 Alert! This will return an error!
+   <img src="mac_cloud.png" alt="Anaconda Cloud" style="width:40%;"/>
 
-```python
-floor(5.7)
-```
+8. Finally, you will get a confirmation telling you that the installation was successful. Click Close.
 
-This code gave an error because you hadn't yet imported the function so that it could be used. Let's do that now:
+   <img src="mac_close.png" alt="Installation Successful" style="width:40%;"/>
 
-```python
-from math import floor
-```
+After following the instructions from the graphical installer, you will have Anaconda on your computer. If you have any trouble, please consult [this link](https://docs.anaconda.com/anaconda/install/mac-os/).
 
-Now you can run the code:
+### Windows
 
-```python
-# Try again
-floor(5.7)
-```
+Anaconda provides a graphical installer that is fairly easy to follow in Windows. After you open the installer, you simply have to follow the prompts. The steps you will need to follow will be similar to the ones outlined here:
 
-You can ask the chatbot to tell you about more functions in the `math` package, or look up the documentation [here](https://docs.python.org/3/library/math.html).
+1. Read the introduction, click Next.
+2. Read the terms and conditions and click "I agree".
+3. Then, you will need to decide the installation type. Anaconda recommends that you do it "Just for me". Click next.
+4. You will be prompted with the installation folder selection. Usually, the predetermined location is a good choice, but feel free to select another if you need to. Click Next.
 
-## Calculating useful statistics with `statistics`
+   <img src="win_folder.png" alt="Installation Folder" style="width:40%;"/>
 
-Python also comes with a package for ```statistics```. You can use it to compute common statistics like mean, median, or standard deviation.
+5. Select whether you want to add Anaconda to your PATH and register Anaconda as your default Python. Anaconda doesn't recommend that you add to your PATH, while it is recommended to set it as your default Python. Click Install.
 
-To try it out, let's import the ```mean``` and ```stdev``` functions from the `math` package:
+   <img src="win_install.png" alt="Anaconda Install" style="width:40%;"/>
 
-```python
-from statistics import mean, stdev
-```
+6. After the installation is complete, click Next.
+7. You will be prompted with the option to learn more about Anaconda in the cloud. Feel free to skip and click Next.
 
-First, create a list that contains the heights of a group of friend's heights:
+   <img src="win_cloud.png" alt="Anaconda Cloud" style="width:40%;"/>
 
-```python
-my_friends_heights = [160, 172, 155, 180, 165, 170, 158, 182, 175, 168]
-```
+8. You will get a confirmation window telling you that the installation was successful. Click Finish.
 
-You can now calculate the ```mean``` value of the list of heights using the `mean` function:
+   <img src="win_finish.png" alt="Installation Successful" style="width:40%;"/>
 
-```python
-mean(my_friends_heights)
-```
+After following the instructions from the graphical installer, you will have Anaconda on your computer. If you have any trouble, please consult [this link](https://docs.anaconda.com/anaconda/install/windows/).
 
-You can also calculate the standard deviation of the heights using the ```stdev``` function:
+### Linux
 
-```python
-stdev(my_friends_heights)
-```
+Run the `.sh` as a program with the method that you prefer. Then, follow these steps in the terminal that is executing the `.sh`:
 
-There are other functions in the statistics package that you can import to calculate other statistics, like median, etc. You can read more about the statistics package [here](https://docs.python.org/3/library/statistics.html) - or ask the chatbot!
+1. Read the welcome message, press enter.
 
-## Introducting randomness to your programs with `random`
+   <img src="linux_greeting.png" alt="Linux Greeting" style="width:40%;"/>
 
-Python also comes with a ```random``` package that generates random numbers and selects random elements from a list. This can be very useful in coding projects! You can read more about `random` [here](https://docs.python.org/3/library/random.html).
+2. Go through the license agreement. Type "yes", then press enter.
 
-You'll write code here to randomly sample from a list of items. To get started, import the ```sample``` function from the ```random``` module:
+   <img src="linux_license.png" alt="Linux License" style="width:40%;"/>
 
-```python
-from random import sample
-```
+3. You will be able to choose the installation destination. The default is usually a good location, but feel free to change it according to your preferences. Press enter to confirm the location.
 
-<p style="background-color:#F5C780; padding:15px"> 🤖 <b>Use the Chatbot</b>: 
-<br>Explain how to use the function sample from the random module.</p>
+   <img src="linux_destination.png" alt="Linux Destination" style="width:40%;"/>
 
-Create lists of ingredients and that you'll select from and pass to the LLM for recipe suggestions:
+4. Finally, you will need to decide whether to update the shell profile to automatically initialize Conda or not. The default is "no". After you have typed your selection, press enter.
 
-```python
-spices = ["cumin", "turmeric", "oregano", "paprika"]
-vegetables = ["lettuce", "tomato", "carrot", "broccoli"]
-proteins = ["chicken", "tofu", "beef", "fish", "tempeh"]
-```
+   <img src="linux_finish.png" alt="Linux Finish" style="width:40%;"/>
 
-You can use Python to select random ingredients for you from these lists.
+5. The program will close after the installation is completed.
 
-The ```sample``` function takes two parameters: the list you want to select from, and the number of items you want to select:
+After following the instructions from the graphical installer, you will have Anaconda on your computer. If you have any trouble, please consult [this link](https://docs.anaconda.com/anaconda/install/linux/).
 
-```python
-random_spices = sample(spices, 2)
-random_vegetables = sample(vegetables, 2)
-random_protein = sample(proteins, 1)
-```
+## Creating a Jupyter Notebook
 
-See what ingredients you selected:
+Once you have installed Anaconda on your computer, you will be able to access the Anaconda Navigator. It provides you with a graphical interface that makes it easy to access Jupyter Notebook and other tools included in the installation. For a quick overview and tutorials, visit [this link](https://docs.anaconda.com/navigator/).
 
-```python
-print(random_protein)
-```
+Follow the next steps to open Jupyter Notebook and create a notebook that uses Python:
 
-## Try for yourself! 
+1. Launch Anaconda Navigator.
+2. In the navigator, look for Jupyter Notebook and click "Launch".
 
-Pause the video here, and try running the last two cells again. 
-* You'll see that you get different ingredients each time! 
-* Check the `random_spices` and `random_vegetables` variables too and see that they also change
+   <img src="anaconda_nav.png" alt="Anaconda Navigator" style="width:40%;"/>
 
-## Use an LLM to suggest a recipe for you using those 'randomly selected' ingredients.
+3. Click on "New", select and click "Notebook".
 
-Create a prompt that asks an LLM to create a recipe using your randomly selected ingredients:
+   <img src="new_notebook.png" alt="New Notebook" style="width:40%;"/>
 
-```python
-prompt = f"""Please suggest a recipe that includes the following ingredients.
+4. Look for Python in "Select kernel" and click "Select".
 
-Spices: {random_spices}
-Vegetables: {random_vegetables}
-Proteins: {random_protein}
-"""
-```
+   <img src="python_kernel.png" alt="Select Python Kernel" style="width:40%;"/>
 
-Check the prompt to see the ingredients:
+You are ready to write and run Python code in a Jupyter Notebook on your computer!
 
-```python
-print(prompt)
-```
+   <img src="notebook_ready.png" alt="Notebook Ready" style="width:40%;"/>
 
-Next, import the `get_llm_response` function from `helper_functions.py` to use to generate the recipe:
+# Installing Python and Jupyter separately
 
-```python
-from helper_functions import get_llm_response
-```
+If you have ever used the terminal on a mac or linux, or Command Prompt on a windows machine, you may want to install Python in a more manual way. This is slightly more difficult than the Anaconda process above, but is a more common way to install and setup Python. 
 
-Next, pass the prompt to the LLM, store the response in a variable named `recipe`, and then print the result:
+Here are the steps you would follow:
 
-```python
-recipe = get_llm_response(prompt)
+## 1. Install Python:
+- Go to the [Python website](https://www.python.org/).
+- Download the latest version of Python for your operating system.
+- Run the installer and ensure you check the box "Add Python to PATH."
 
-print(recipe)
-```
+## 2. Install Jupyter Notebook:
+- Open Command Prompt (Windows) or Terminal (Mac/Linux).
+- Run the command: 
+    ```sh
+    pip install jupyter
+    ```
+## 3. Install aisetup:
+- In the Command Prompt (Windows) or Terminal (Mac/Linux)
+- Run the command: 
+    ```sh
+    pip install aisetup
+    ```
 
-## Extra practice
+## Start Jupyter Notebook:
+- Run the command:
+    ```sh
+    jupyter notebook
+    ```
+    in Command Prompt or Terminal.
 
-Try the following exercises to practice what you have learned. If you need help, don't hesitate to ask the 🤖 chatbot!
+## Alternative: Start Jupyter Lab:
+- Jupyter lab has some extra features, like a file browser that makes it easier to view and upload files.
+- Run the command:
+    ```sh
+    jupyter lab
+    ```
+    in Command Prompt or Terminal.
 
-### Exercise 1
+**If you need help with any of these steps, a chatbot can be helpful, or you can search the web.**
 
-Write code to import the `tan` (tangent) function from `math`, then calculate and print the tan of each value.
+# Getting API Keys
 
+Once you have installed Anaconda and started up a Jupyter notebook, you can experiment with the OpenWeather and OpenAI APIs! The steps below will show you how to get your own API key for each service.
 
-```python
-# Write code to import the tan (tangent) function from math
-from math 
+For each API, you will need to create an account, then create an API key.
 
-values = [0, pi/2, pi, 3/2*pi, 2*pi]
+## OpenWeather
 
-# Complete the following code to calculate the tan of each value:
-for value in values:
-    print (f"The tangent of {value:.2f} is    ")
-```
 
-### Exercise 2
 
-Write code to calculate the median score in the list of scores below. You'll need to write an import statement as well as use the `median` function on your data.
+1. Create an account using [the OpenWeatherMap.org sign up page](https://home.openweathermap.org/users/sign_up).
+    - You must be 16 or over, and agree to the terms of service.
 
-```python
+    <img src="open_weather_map_signup.png" alt="Open Weather map signup page" style="width:40%;"/>
 
-scores = [28, 14, 15, 25, 21, 26, 30, 8, 36]
+2. Click on your account name in the top right corner, then "My API keys"
 
-# Write code to import the median function from the statistics package
-from 
+    <img src="open_weather_user_menu.png" alt="Open Weather map user menu" style="width:40%;"/>
 
-# Calculate the median score
-median_score = 
-print(median_score)
-```
+3. Copy the API key that has been generated for you already.
 
-### Challenge exercise!
+    <img src="open_weather_api_key.png" alt="Open Weather api keys page" style="width:40%;"/>
 
-Write code using Python's built-in random package to print a random number between 1 and 10.
+You're done! You can now use this API key in your code.
 
-Work with a chatbot, or consult the `random` package's [documentation website](https://docs.python.org/3/library/random.html) when you need help.
+## OpenAI
 
-```python
-# YOUR CODE HERE
-```
+OpenAI manages API keys through the OpenAI Platform, which is separate from ChatGPT. **You will need to create an OpenAI Platform account even if you already have one for ChatGPT.**
+
+1. Go to [the OpenAI Platform homepage](https://platform.openai.com/).
+2. Create an OpenAI Platform account. You can use the same login as your ChatGPT account, if you have one, but the two accounts are managed separately. Make sure you have verified your phone number. You cannot change your phone number after account creation. If a phone number does not appear in your account, you will need to contact support. 
+
+    <img src="openai_signup.png" alt="OpenAI platform signup" style="width:40%;"/>
+
+3. Navigate to [Dashboard -> API keys](https://platform.openai.com/api-keys).
+4. Click "+ Create new secret key".
+
+    <img src="openai_api_keys.png" alt="OpenAI platform api keys page" style="width:40%;"/>
+
+5. Click "Create secret key". You do not need to name your key.
+
+    <img src="openai_create_key.png" alt="Creating an OpenAI api key" style="width:40%;"/>
+
+6. Copy the key and save it somewhere. **Note:** You will NOT be able to view the key again after closing this window.
+
+    <img src="openai_save_key.png" alt="Copying an OpenAI api key" style="width:40%;"/>
+
+
+You're done! You can now use this API key in your code.

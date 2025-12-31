@@ -1,152 +1,202 @@
-# Lesson 2: Loading and using your own data
+# Lesson 7: Creating itineraries for multiple cities
 
-In this notebook, you will get a chance to work with one of your own text files (.txt).
-If you don't have any, you can create one by copying and pasting text into Notepad, MS Word, or Google Docs and saving it as a .txt file.
+In this lesson, you will use everything you have seen so far to plan the perfect vacation around the world!
 
-## Reading files in the working directory
-
-To access data you have stored in files and folders on your computer, you need to tell Python where to find them. By default, Python will always look first for files in the folder your Jupyter notebook is in.
-
-<p style="background-color:#F5C780; padding:15px"> 🤖 <b>Use the Chatbot</b>:
-    <br><br>
-    What is the folder called where Python looks first for files, and which folder is that by default?
-</p>
-
-* Load some functions to use in this notebook (note there are some new ones here, and they will be explained as you use them):
+To get started, import some helper functions:
 
 ```python
-from helper_functions import upload_txt_file, list_files_in_directory, print_llm_response
+from helper_functions import print_llm_response, get_llm_response, display_table
+from IPython.display import Markdown
+import csv
 ```
 
-* Use the 'list_files_in_directory' function to list out the files in the current working directory:
+## Reading travel itineraries from a CSV file
+
+First, define a new function that reads data stored in a CSV file and returns it as a dictionary variable:
 
 ```python
-list_files_in_directory()
+def read_csv(file):
+    f = open(file, "r")
+    
+    csv_reader = csv.DictReader(f)
+    data = []
+    for row in csv_reader:
+        data.append(row)
+    f.close()
+    
+    return data
 ```
 
-The function lists all of the files that are in the same folder as the Jupyter notebook for this lesson. 
-
-Jupyter notebooks have a **.ipynb** extension and Python files have a **.py** extension.
-
-The Python file here is the ```helper_function.py``` file, which it is loaded with some pre-defined functions. You will learn more about this file and how it works in Course 4.
-
-There are also two plain text files, `email.txt` and `recipe.txt`. Let's take a look at those files:
+Next, load itineraries from `itinerary.csv` using the function you just defined (notice how much less code this is!) and then display the table of itineraries:
 
 ```python
-# Open the email.txt file and print its contents
-f = open("email.txt", "r")
-email = f.read()
-f.close()
+# Read the itinerary.csv file
+itinerary = read_csv("itinerary.csv")
 
-print(email)
+# Display the itinerary
+display_table(itinerary)
 ```
 
-```python
-# Open the recipe.txt file and print its contents
-f = open("recipe.txt", "r")
-recipe = f.read()
-f.close()
+## Reading restaurant information from food journal entries
 
-print(recipe)
+Now create a new function called `read_journal` that reads in the contents of a plain text file with '.txt' extension and stores it into a string variable:
+
+```python
+# The function called 'read_journal'
+def read_journal(journal_file):
+    f = open(journal_file, "r")
+    journal = f.read() 
+    f.close()
+
+    # Return the journal content
+    return journal
 ```
 
-## Uploading and reading your own text files
+Note that you used this function in an earlier lesson - now you know how it works!
 
-You can upload a text file to this folder using the button that appears after running the next cell.
-
-Here are some notes about the file you can upload...
-* It can be any plain text file with a .txt extension.
-* Make sure the file size doesn't exceed 3 KB (about 3000 characters)
-* You can create a plain text file by copying and pasting text into a text editor on your computer like Notepad (windows) or TextEdit (mac). 
-* You can also use a Google Doc and download it as a plain text '.txt' file.
-* **Don't upload anything confidential!** 
-
-Run the next cell to open the upload file button:
-
+You can now use the `read_journal` function to read in a food journal file - let's start with Sydney:
 
 ```python
-upload_txt_file() 
+journal = read_journal("sydney.txt")
+
+print(journal)
 ```
 
-* See that your file is now in the same folder with the other files you listed above:
+Write a prompt that extracts restaurant and specialty dish information from the journal text and stores it in CSV format:
 
 ```python
-# Print the list of the files inside this folder
-list_files_in_directory()
-```
+# Write the prompt
+prompt = f"""Please extract a comprehensive list of the restaurants 
+and their respective specialties mentioned in the following journal entry. 
+Ensure that each restaurant name is accurately identified and listed. 
+Provide your answer in CSV format, ready to save. 
+Exclude the "```csv" declaration, don't add spaces after the comma, include column headers.
 
-* Open and print your own file content.
+Format:
+Restaurant, Specialty
+Res_1, Sp_1
+...
 
-```python
-# Change the file name on the next line to the one you uploaded. 
-# Make sure you keep the double quotation marks around the file name!
-f = open("your_file.txt", "r")
-your_file_content = f.read() 
-f.close()
-```
+Journal entry:
+{journal}
+"""
 
-```python
-print(your_file_content)
-```
-
-## Use AI to summarize your file contents
-
-* Ask an LLM to create a summary of your file content
-
-```python
-prompt = f"""Summarize the content from the following text
-in at most two sentences. 
-
-Text:
-{your_file_content}"""
-```
-
-* Print out the prompt - notice that it now contains the content of your file:
-
-```python
-print(prompt)
-```
-
-* Print out the response from the LLM
-
-```python
+# Print the prompt
 print_llm_response(prompt)
 ```
 
-## Extra Practice
-
-Try the exercises below to practice some of the techniques you learned in this lesson.
-
-### Exercise 1
-
-Modify the prompt below to ask the LLM a different question about your text data.
+Read in restaurant information from `Sydney.csv` file that was created for you and display it using the `display_table` function:
 
 ```python
-# Modify the prompt below to ask the LLM a different question about 
-# your data
-prompt = f"""ADD YOUR INSTRUCTION HERE. 
+# Use the read_csv function
+sydney_restaurants = read_csv("Sydney.csv")
 
-Text:
-{your_file_content}"""
-
-print_llm_response(prompt)
+display_table(sydney_restaurants)
 ```
 
-### Exercise 2
+## Creating detailed itineraries with restaurant suggestions
 
-Modify the prompt to use the data that you loaded in from `recipe.txt`.
+In this section, you'll combine the data in the journal and the itinerary to create a detailed plan for your visit to Sydney. 
 
-**Hint:** look back throughout the notebook for the variable you stored the recipe data in.
+To access Sydney's data in the ```itinerary``` list, you have to use index '6' since Sydney is the seventh trip destination.
 
 ```python
-# Modify the prompt to use the data that you loaded in from recipe.txt
-# Hint: look back throughout the notebook for the variable you stored 
-# the recipe data in.
-prompt = f"""Identify all of the cooking techniques used in the 
-following recipe:
-
-Recipe:
-{your_file_content}"""
-
-print_llm_response(prompt)
+# Select Sydney from the 'itinerary' list
+trip_stop = itinerary[6]
 ```
+
+Next, store all the information from that ```trip_stop```, as well as the restaurant information you read in above, in separate variables:
+
+```python
+city = trip_stop["City"]
+country = trip_stop["Country"]
+arrival = trip_stop["Arrival"]
+departure = trip_stop["Departure"]
+restaurants = sydney_restaurants
+```
+
+Pass all of this information in a detailed prompt to an LLM to create a detailed itinerary:
+
+```python
+# Write the prompt
+prompt = f"""I will visit {city}, {country} from {arrival} to {departure}. 
+Create a daily itinerary with detailed activities. 
+Designate times for breakfast, lunch, and dinner. 
+
+I want to visit the restaurants listed in the restaurant dictionary 
+without repeating any place. Make sure to mention the specialty
+that I should try at each of them.
+
+Restaurant dictionary:
+{restaurants}
+
+"""
+
+response = get_llm_response(prompt)
+
+# Print the LLM response in Markdown format
+display(Markdown(response))
+```
+
+## Create detailed itineraries for all the cities in your trip
+
+You'll use a 'for' loop to iterate over all the cities in the ```itinerary``` list and create a detailed itinerary for each location:
+
+```python
+# Create an empty dictionary to store the itinerary for each destination
+detailed_itinerary = {}
+
+ # Use the 'for' loop over the 'itinerary' list   
+for trip_stop in itinerary:
+    city = trip_stop["City"]
+    country = trip_stop["Country"]
+    arrival = trip_stop["Arrival"]
+    departure = trip_stop["Departure"]
+
+    rest_dict = read_csv(f"{city}.csv")
+    
+    print(f"Creating detailed itinerary for {city}, {country}.")
+    
+    prompt = f"""I will visit {city}, {country} from {arrival} to {departure}. 
+    Create a daily itinerary with detailed activities. 
+    Designate times for breakfast, lunch, and dinner. 
+
+    I want to visit the restaurants listed in the restaurant dictionary without repeating any place.
+    Make sure to mention the specialty that I should try at each of them.
+
+    Restaurant dictionary:
+    {rest_dict}
+
+    """
+    # Store the detailed itinerary for the city to the dictionary
+    detailed_itinerary[city] = get_llm_response(prompt)
+```
+
+You can now access the detailed itinerary for any city by passing in the city name as the key to the `detailed_itinerary` dictionary:
+
+```python
+# Print in Markdown format
+display(Markdown(detailed_itinerary["Tokyo"]))
+```
+
+## Try it yourself! 
+
+Update the code below to check out the itinerary for another city. 
+
+**Options:**
+- Cape Town
+- Istanbul
+- New York
+- Paris
+- Rio de Janeiro
+- Sydney
+- Tokyo
+
+```python
+# Update the next line of code to view a different city
+display(Markdown(detailed_itinerary["YOUR CITY HERE"]))
+```
+
+## Congratulations on completing this course! 🎉🎉🎉
+
+Please go onto the fourth and final course of this sequence where you'll learn how to extend the capabilities of Python using code written by other programmers!

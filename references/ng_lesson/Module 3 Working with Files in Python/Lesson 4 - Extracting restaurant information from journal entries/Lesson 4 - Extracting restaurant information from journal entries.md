@@ -1,227 +1,202 @@
-# Lesson 4: Extracting restaurant information from journal entries
+# Lesson 7: Creating itineraries for multiple cities
 
-In this lesson you'll use an LLM to extract specific information from a text file - in this case restaurant names and signature dishes.
+In this lesson, you will use everything you have seen so far to plan the perfect vacation around the world!
 
-Start by importing some helper functions:
+To get started, import some helper functions:
 
 ```python
-from helper_functions import *
-from IPython.display import display, HTML
+from helper_functions import print_llm_response, get_llm_response, display_table
+from IPython.display import Markdown
+import csv
 ```
 
-## Using AI to highlight important information
+## Reading travel itineraries from a CSV file
 
-Load the journal entry for Rio de Janeiro, stored in the `rio_de_janeiro.txt` file. 
-* You'll use a new helper function called `read_journal`
-* Don't worry about how this works for now, you'll learn about it in a later lesson in this course
+First, define a new function that reads data stored in a CSV file and returns it as a dictionary variable:
 
 ```python
-journal_rio_de_janeiro = read_journal("rio_de_janeiro.txt")
+def read_csv(file):
+    f = open(file, "r")
+    
+    csv_reader = csv.DictReader(f)
+    data = []
+    for row in csv_reader:
+        data.append(row)
+    f.close()
+    
+    return data
 ```
 
-Next, write and print out a prompt that asks the LLM to highlight the restaurants and their best dishes in the journal entry:
+Next, load itineraries from `itinerary.csv` using the function you just defined (notice how much less code this is!) and then display the table of itineraries:
 
 ```python
-prompt = f"""
-Given the following journal entry from a food critic, identify the restaurants and their best dishes.
-Highlight and bold each restaurant (in orange) and best dish (in blue) within the original text. 
+# Read the itinerary.csv file
+itinerary = read_csv("itinerary.csv")
 
-Provide the output as HTML suitable for display in a Jupyter notebook. 
-
-Journal entry:
-{journal_rio_de_janeiro}
-"""
-
-print(prompt)
+# Display the itinerary
+display_table(itinerary)
 ```
 
-Pass this prompt to an LLM and store the response in a variable called `html_response`. Then print the result:
+## Reading restaurant information from food journal entries
+
+Now create a new function called `read_journal` that reads in the contents of a plain text file with '.txt' extension and stores it into a string variable:
 
 ```python
-html_response = get_llm_response(prompt)
-print(html_response)
+# The function called 'read_journal'
+def read_journal(journal_file):
+    f = open(journal_file, "r")
+    journal = f.read() 
+    f.close()
+
+    # Return the journal content
+    return journal
 ```
 
-The 'print' function here displays the raw text - including all of the HTML tags that a web browser uses to display the text with proper formatting. 
-* Use display and HTML to display the HTML formatted output properly in the Jupyter notebook:
+Note that you used this function in an earlier lesson - now you know how it works!
+
+You can now use the `read_journal` function to read in a food journal file - let's start with Sydney:
 
 ```python
-display(HTML(html_response))
+journal = read_journal("sydney.txt")
+
+print(journal)
 ```
 
-Try the same steps with the Tokyo journal entry:
+Write a prompt that extracts restaurant and specialty dish information from the journal text and stores it in CSV format:
 
 ```python
-journal_tokyo = read_journal("tokyo.txt") 
-
-prompt = f"""
-Given the following journal entry from a food critic, identify the restaurants and their best dishes.
-Highlight and bold each restaurant (in orange) and best dish (in blue) within the original text. 
-
-Provide the output as HTML suitable for display in a Jupyter notebook. 
-
-Journal entry:
-{journal_tokyo}
-"""
-
-html_response = get_llm_response(prompt)
-display(HTML(html_response))
-```
-
-Notice that even though the structure of this text is very different from the previous one, the LLM is able to identify and highlight the correct items.
-
-## Try for yourself!
-
-If you like, pause the video here and try modifying the prompt above to do other things, for example:
-- Have the LLM highlight any desserts in green
-- Have the LLM add a relevant emoji beside any ingredients
-
-## Extracting restaurants and their best dishes
-
-Next, you'll modify the prompt to extract the information from the text and list it out, instead of highlighting it.
-
-Here is the modified prompt with the new instructions to save the data in CSV, or **Comma Separated Value** format:
-
-```python
+# Write the prompt
 prompt = f"""Please extract a comprehensive list of the restaurants 
-and their respective best dishes mentioned in the following journal entry. 
+and their respective specialties mentioned in the following journal entry. 
 Ensure that each restaurant name is accurately identified and listed. 
-
 Provide your answer in CSV format, ready to save. 
 Exclude the "```csv" declaration, don't add spaces after the comma, include column headers.
 
 Format:
-Restaurant, Dish
-Res_1, Dsh_1
+Restaurant, Specialty
+Res_1, Sp_1
 ...
 
 Journal entry:
-{journal_rio_de_janeiro}
+{journal}
 """
 
-restaurants_csv_ready_string = get_llm_response(prompt)
-
-print(restaurants_csv_ready_string)
+# Print the prompt
+print_llm_response(prompt)
 ```
 
-Notice how the output now only contains the restaurants and names of dishes. 
-
-The first line indicates what information each row contains, in this case the name of the restaurant, then a comma, then the name of the dish.
-
-## Looping through multiple journals
-
-In this section, you'll iterate through all the journal entries using a `for` loop and extract the restaurants and best dishes from each file:
+Read in restaurant information from `Sydney.csv` file that was created for you and display it using the `display_table` function:
 
 ```python
-files = ["cape_town.txt", "istanbul.txt", "new_york.txt", "paris.txt", 
-          "rio_de_janeiro.txt", "sydney.txt", "tokyo.txt"]
+# Use the read_csv function
+sydney_restaurants = read_csv("Sydney.csv")
 
-for file in files:
-    #Open file and read contents
-    journal_entry = read_journal(file)
+display_table(sydney_restaurants)
+```
 
-    #Extract restaurants and display csv
-    prompt =  f"""Please extract a comprehensive list of the restaurants 
-    and their respective best dishes mentioned in the following journal entry. 
+## Creating detailed itineraries with restaurant suggestions
+
+In this section, you'll combine the data in the journal and the itinerary to create a detailed plan for your visit to Sydney. 
+
+To access Sydney's data in the ```itinerary``` list, you have to use index '6' since Sydney is the seventh trip destination.
+
+```python
+# Select Sydney from the 'itinerary' list
+trip_stop = itinerary[6]
+```
+
+Next, store all the information from that ```trip_stop```, as well as the restaurant information you read in above, in separate variables:
+
+```python
+city = trip_stop["City"]
+country = trip_stop["Country"]
+arrival = trip_stop["Arrival"]
+departure = trip_stop["Departure"]
+restaurants = sydney_restaurants
+```
+
+Pass all of this information in a detailed prompt to an LLM to create a detailed itinerary:
+
+```python
+# Write the prompt
+prompt = f"""I will visit {city}, {country} from {arrival} to {departure}. 
+Create a daily itinerary with detailed activities. 
+Designate times for breakfast, lunch, and dinner. 
+
+I want to visit the restaurants listed in the restaurant dictionary 
+without repeating any place. Make sure to mention the specialty
+that I should try at each of them.
+
+Restaurant dictionary:
+{restaurants}
+
+"""
+
+response = get_llm_response(prompt)
+
+# Print the LLM response in Markdown format
+display(Markdown(response))
+```
+
+## Create detailed itineraries for all the cities in your trip
+
+You'll use a 'for' loop to iterate over all the cities in the ```itinerary``` list and create a detailed itinerary for each location:
+
+```python
+# Create an empty dictionary to store the itinerary for each destination
+detailed_itinerary = {}
+
+ # Use the 'for' loop over the 'itinerary' list   
+for trip_stop in itinerary:
+    city = trip_stop["City"]
+    country = trip_stop["Country"]
+    arrival = trip_stop["Arrival"]
+    departure = trip_stop["Departure"]
+
+    rest_dict = read_csv(f"{city}.csv")
     
-    Ensure that each restaurant name is accurately identified and listed. 
-    Provide your answer in CSV format, ready to save.
+    print(f"Creating detailed itinerary for {city}, {country}.")
+    
+    prompt = f"""I will visit {city}, {country} from {arrival} to {departure}. 
+    Create a daily itinerary with detailed activities. 
+    Designate times for breakfast, lunch, and dinner. 
 
-    Exclude the "```csv" declaration, don't add spaces after the 
-    comma, include column headers.
+    I want to visit the restaurants listed in the restaurant dictionary without repeating any place.
+    Make sure to mention the specialty that I should try at each of them.
 
-    Format:
-    Restaurant, Dish
-    Res_1, Dsh_1
-    ...
+    Restaurant dictionary:
+    {rest_dict}
 
-    Journal entry:
-    {journal_entry}
     """
-    
-    print(file)
-    print_llm_response(prompt)
-    print("") # Prints a blank line!
+    # Store the detailed itinerary for the city to the dictionary
+    detailed_itinerary[city] = get_llm_response(prompt)
 ```
 
-## Try for yourself! 
-Try modifying the prompt inside the `for` loop above to extract different information. For example
-* Extract the restaurant name and the neighborhood it is located in
-* Extract each dish and it's main ingredient
-
-## Writing Files
-
-Here, you will learn how you can save files with the data you have created using Python and LLM.
-
-As a reminder, print the html_response variable to see it's contents:
+You can now access the detailed itinerary for any city by passing in the city name as the key to the `detailed_itinerary` dictionary:
 
 ```python
-display(HTML(html_response))
+# Print in Markdown format
+display(Markdown(detailed_itinerary["Tokyo"]))
 ```
 
-Next, save the data in html_response to a file:
+## Try it yourself! 
+
+Update the code below to check out the itinerary for another city. 
+
+**Options:**
+- Cape Town
+- Istanbul
+- New York
+- Paris
+- Rio de Janeiro
+- Sydney
+- Tokyo
 
 ```python
-f = open("highlighted_text.html", 'w') 
-f.write(html_response) 
-f.close()
+# Update the next line of code to view a different city
+display(Markdown(detailed_itinerary["YOUR CITY HERE"]))
 ```
 
-Note that you use `'w'` instead of `'r'` and `f.write` instead of `f.read` here, in contrast to when you read in a file.
+## Congratulations on completing this course! 🎉🎉🎉
 
-<p style="background-color:#F5C780; padding:15px"> 🤖 <b>Use the Chatbot</b>:
-    <br><br>
-    Explain this code line by line:
-    <br><br>f = open("highlighted_text.html", 'w')
-    <br>f.write(html_response)
-    <br>f.close()
-</p>
-
-You can use the following button to download the file you just wrote above.
-* Make sure to provide the right file name: 'highlighted_text.html' when asked!
-
-```python
-download_file()
-```
-
-## Extra practice
-
-### Exercise 1
-
-Modify the prompt below to create an HTML file that highlights all the **restaurant names in green** and the **neighborhoods in pink** in the Sydney journal entry.
-
-```python
-journal_sydney = read_journal("sydney.txt") 
-
-# Modify the prompt below
-prompt = f"""
-Given the following journal entry from a food critic, identify the 
-restaurants and their best dishes. Highlight and bold each restaurant 
-(in orange) and best dish (in blue) within the original text. 
-
-Provide the output as HTML suitable for display in a Jupyter notebook. 
-
-Journal entry:
-{journal_tokyo}
-"""
-
-html_sydney = get_llm_response(prompt)
-display(HTML(html_sydney))
-```
-
-### Exercise 2
-
-Modify the code below to save the output of the LLM to an HTML file. The file should be called `highlighted_sydney.html`.
-
-```python
-
-f = open() 
-f.write() 
-f.close()
-```
-
-You can then download the file, if you'd like!
-
-```python
-download_file()
-```
+Please go onto the fourth and final course of this sequence where you'll learn how to extend the capabilities of Python using code written by other programmers!

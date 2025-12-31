@@ -125,7 +125,6 @@ You are ready to write and run Python code in a Jupyter Notebook on your compute
 
    <img src="notebook_ready.png" alt="Notebook Ready" style="width:40%;"/>
 
-
 # Installing Python and Jupyter separately
 
 If you have ever used the terminal on a mac or linux, or Command Prompt on a windows machine, you may want to install Python in a more manual way. This is slightly more difficult than the Anaconda process above, but is a more common way to install and setup Python. 
@@ -166,7 +165,6 @@ Here are the steps you would follow:
     in Command Prompt or Terminal.
 
 **If you need help with any of these steps, a chatbot can be helpful, or you can search the web.**
-
 
 # Getting API Keys
 

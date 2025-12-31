@@ -34,6 +34,7 @@
 - Stanford 官方代码以 `references/office-code/` 为准，课程讲义撰写时必须对照官方实现。
 - `curriculum/Stanford CS146S/` 内以讲义与课程材料为主，不作为官方代码来源。
 - `references/ng_lesson/` 作为并行参考，优先补齐主线 1 的 Python 基础。
+- `references/` 目录为官方/参考快照，除非来自官方更新，否则禁止手动修改。
 - 引用时标注文件路径，避免无出处的信息拼贴。
 
 ## 7. 文件与命名规范
@@ -58,3 +59,10 @@
 - 每日更新 `docs/WORKLOG/`。
 - 每次新增或调整课程内容，必须同步更新映射表与任务清单。
 - 每周复盘一次结构与进度，修正偏差。
+
+## 11. `references/ng_lesson/` 手动同步流程
+- 同步前确认官方页面与范围（记录 URL 与日期）。
+- 对比本地与官方内容差异，标出新增/修改点。
+- 仅在确认是官方更新时同步到 `references/ng_lesson/`。
+- 在当日 `docs/WORKLOG/YYYY-MM-DD.md` 记录同步范围、来源 URL、差异摘要。
+- 可使用 `scripts/ng_lesson_sync.py` 自动化同步（需登录 cookie）。

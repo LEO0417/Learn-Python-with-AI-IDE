@@ -2,8 +2,9 @@ import os
 
 from openai import OpenAI
 from dotenv import load_dotenv
-from datetime import datetime as dt
-
+import csv
+import pandas as pd
+from IPython.display import display, HTML
 
 # Get the OpenAI API key from the .env file
 load_dotenv('.env', override=True)
@@ -11,7 +12,6 @@ openai_api_key = os.getenv('OPENAI_API_KEY')
 
 # Set up the OpenAI client
 client = OpenAI(api_key=openai_api_key)
-
 
 def print_llm_response(prompt):
     """This function takes as input a prompt, which must be a string enclosed in quotation marks,
@@ -25,7 +25,7 @@ def print_llm_response(prompt):
             messages=[
                 {
                     "role": "system",
-                    "content": "You are a helpful but terse AI assistant who gets straight to the point.",
+                    "content": "You are a helpful but terse AI assistant",
                 },
                 {"role": "user", "content": prompt},
             ],
@@ -47,7 +47,7 @@ def get_llm_response(prompt):
         messages=[
             {
                 "role": "system",
-                "content": "You are a helpful but terse AI assistant who gets straight to the point.",
+                "content": "You are a helpful but terse AI assistant",
             },
             {"role": "user", "content": prompt},
         ],
@@ -57,7 +57,9 @@ def get_llm_response(prompt):
     return response
 
 
-def get_current_time():
-    now = dt.now()
-    return now.strftime("%m/%d/%Y, %H:%M:%S")
+def display_table(data):
+    df = pd.DataFrame(data)
+
+    # Display the DataFrame as an HTML table
+    display(HTML(df.to_html(index=False)))
 

@@ -1,175 +1,202 @@
-# Lesson 3: Reading journals from food critics
+# Lesson 7: Creating itineraries for multiple cities
 
-In this lesson, you'll use AI to decide whether the contents of a file are about food and restaurants.
+In this lesson, you will use everything you have seen so far to plan the perfect vacation around the world!
 
-Text data like emails, journal entries, and social media posts often have no predefined structure. Additionally, each person writes in their own style: some use bullet points, while others prefer long paragraphs. For this reason, text data is known as **unstructured data**. 
-
-Let's start by loading some helper functions to use in the notebook:
+To get started, import some helper functions:
 
 ```python
-from helper_functions import get_llm_response, print_llm_response
+from helper_functions import print_llm_response, get_llm_response, display_table
+from IPython.display import Markdown
+import csv
 ```
 
-## Working with text data
+## Reading travel itineraries from a CSV file
 
-You'll take look at journal entries in the working directory. The journals are stored as plain text files with extension `.txt'.
-
-Start by opening and reading the Cape Town journal:
+First, define a new function that reads data stored in a CSV file and returns it as a dictionary variable:
 
 ```python
-f = open("cape_town.txt", "r")
-journal_cape_town = f.read()
-f.close()
+def read_csv(file):
+    f = open(file, "r")
+    
+    csv_reader = csv.DictReader(f)
+    data = []
+    for row in csv_reader:
+        data.append(row)
+    f.close()
+    
+    return data
 ```
 
-Print the contents of the journal:
+Next, load itineraries from `itinerary.csv` using the function you just defined (notice how much less code this is!) and then display the table of itineraries:
 
 ```python
-print(journal_cape_town)
+# Read the itinerary.csv file
+itinerary = read_csv("itinerary.csv")
+
+# Display the itinerary
+display_table(itinerary)
 ```
 
-As you can see, the file is about restaurants and food.
+## Reading restaurant information from food journal entries
 
-Next, open the Tokyo journal entry file and read its contents:
+Now create a new function called `read_journal` that reads in the contents of a plain text file with '.txt' extension and stores it into a string variable:
 
 ```python
-f = open("tokyo.txt", "r")
-journal_tokyo = f.read() 
-f.close()
+# The function called 'read_journal'
+def read_journal(journal_file):
+    f = open(journal_file, "r")
+    journal = f.read() 
+    f.close()
+
+    # Return the journal content
+    return journal
 ```
 
-Print the contents of the journal:
+Note that you used this function in an earlier lesson - now you know how it works!
+
+You can now use the `read_journal` function to read in a food journal file - let's start with Sydney:
 
 ```python
-print(journal_tokyo)
+journal = read_journal("sydney.txt")
+
+print(journal)
 ```
 
-This entry is also about restaurants and food - but notice how different the format of the journal is from the Cape Town example!
-
-## Determining if text files are relevant using LLMs
-
-In this section, you'll write a prompt that instructs an LLM to determine whether a file content is about food and restaurants or some other topic. 
-
-Define the prompt and include the Tokyo journal entry as the input data to check:
+Write a prompt that extracts restaurant and specialty dish information from the journal text and stores it in CSV format:
 
 ```python
-prompt = f"""Respond with "Relevant" or "Not relevant": 
-the journal describes restaurants and their specialties. 
+# Write the prompt
+prompt = f"""Please extract a comprehensive list of the restaurants 
+and their respective specialties mentioned in the following journal entry. 
+Ensure that each restaurant name is accurately identified and listed. 
+Provide your answer in CSV format, ready to save. 
+Exclude the "```csv" declaration, don't add spaces after the comma, include column headers.
 
-Journal:
-{journal_tokyo}"""
-```
+Format:
+Restaurant, Specialty
+Res_1, Sp_1
+...
 
-Print the LLM response to see if the file is relevant for our purpose or not:
+Journal entry:
+{journal}
+"""
 
-```python
+# Print the prompt
 print_llm_response(prompt)
 ```
 
-## Checking all files using a `for` loop
-
-Using Python and an LLM together allows you to quickly iterate over multiple files and check the relevance of the content for your tasks.
-
-Start by creating a list of all the files you want to check:
+Read in restaurant information from `Sydney.csv` file that was created for you and display it using the `display_table` function:
 
 ```python
-# List of the journal files
-files = ["cape_town.txt", "madrid.txt", "rio_de_janeiro.txt", "sydney.txt", "tokyo.txt"]
+# Use the read_csv function
+sydney_restaurants = read_csv("Sydney.csv")
+
+display_table(sydney_restaurants)
 ```
 
-Next, use a `for` loop to open each file and have an LLM check if the content from that file is relevant to food and restaurants.
-* *If you need a refresher on `for` loops, please revisit Course 2!*
+## Creating detailed itineraries with restaurant suggestions
+
+In this section, you'll combine the data in the journal and the itinerary to create a detailed plan for your visit to Sydney. 
+
+To access Sydney's data in the ```itinerary``` list, you have to use index '6' since Sydney is the seventh trip destination.
 
 ```python
-for file in files:
-    # Read journal file for the city
-    f = open(file, "r")
-    journal = f.read()
-    f.close()
-
-    # Create prompt
-    prompt = f"""Respond with "Relevant" or "Not relevant": 
-    the journal describes restaurants and their specialties. 
-
-    Journal:
-    {journal}"""
-
-    # Use LLM to determine if the journal entry is useful
-    print(f"{file} -> {get_llm_response(prompt)}")
+# Select Sydney from the 'itinerary' list
+trip_stop = itinerary[6]
 ```
 
-It seems that the Madrid journal entry is not relevant. Let's print its contents to see why the LLM flagged it as "not relevant":
+Next, store all the information from that ```trip_stop```, as well as the restaurant information you read in above, in separate variables:
 
 ```python
-# Here you can check the content from any journal entry
-f = open("madrid.txt", "r") 
-print(f.read()) 
-f.close()
+city = trip_stop["City"]
+country = trip_stop["Country"]
+arrival = trip_stop["Arrival"]
+departure = trip_stop["Departure"]
+restaurants = sydney_restaurants
 ```
 
-The Madrid journal entry doesn't contain information about restaurants to try. Instead, it is a description of the economy of the city.
-
-<p style="background-color:#F5C780; padding:15px"> 🤖 <b>Use the Chatbot</b>:
-    <br><br>
-    I am using AI to determine whether different texts are "relevant" or "not relevant" using an LLM. Does this task have a specific name in AI?
-</p>
-
-## Extra practice
-
-Experiment with different prompts to check whether files are of interest to you or not. Below is the example suggested in the video - try running it first. Then, try each exercise.
-
-### Exercise 1
-
-Change the prompt to classify the text for different topics, for example "mentions a dessert" or "describes the restaurant design."
+Pass all of this information in a detailed prompt to an LLM to create a detailed itinerary:
 
 ```python
-files = ["cape_town.txt", "madrid.txt", "rio_de_janeiro.txt", 
-         "sydney.txt", "tokyo.txt"]
+# Write the prompt
+prompt = f"""I will visit {city}, {country} from {arrival} to {departure}. 
+Create a daily itinerary with detailed activities. 
+Designate times for breakfast, lunch, and dinner. 
 
-for file in files:
-    # Read journal file for the city
-    f = open(file, "r")
-    journal = f.read()
-    f.close()
+I want to visit the restaurants listed in the restaurant dictionary 
+without repeating any place. Make sure to mention the specialty
+that I should try at each of them.
 
-    # TRY CHANGING THIS PROMPT TO ASK DIFFERENT QUESTIONS
-    prompt = f"""Respond with "Yes" or "No": 
-    the journal describes restaurants and food dishes. 
+Restaurant dictionary:
+{restaurants}
 
-    Journal:
-    {journal}"""
+"""
 
-    # Use LLM to determine if the journal entry is useful
-    print(f"{file} -> {get_llm_response(prompt)}")
+response = get_llm_response(prompt)
+
+# Print the LLM response in Markdown format
+display(Markdown(response))
 ```
 
-### Exercise 2
+## Create detailed itineraries for all the cities in your trip
 
-Using the same code below, change the prompt to classify into more than two categories.
-
-**Example:**
-- mentions a **vegetarian** dish
-- mentions a **vegan** dish
-- mentions both
-- mentions neither
+You'll use a 'for' loop to iterate over all the cities in the ```itinerary``` list and create a detailed itinerary for each location:
 
 ```python
-files = ["cape_town.txt", "madrid.txt", "rio_de_janeiro.txt", 
-         "sydney.txt", "tokyo.txt"]
+# Create an empty dictionary to store the itinerary for each destination
+detailed_itinerary = {}
 
-for file in files:
-    # Read journal file for the city
-    f = open(file, "r")
-    journal = f.read()
-    f.close()
+ # Use the 'for' loop over the 'itinerary' list   
+for trip_stop in itinerary:
+    city = trip_stop["City"]
+    country = trip_stop["Country"]
+    arrival = trip_stop["Arrival"]
+    departure = trip_stop["Departure"]
 
-    # TRY CHANGING THIS PROMPT TO ASK DIFFERENT QUESTIONS
-    prompt = f"""Respond with "Yes" or "No": 
-    the journal describes restaurants and food dishes. 
+    rest_dict = read_csv(f"{city}.csv")
+    
+    print(f"Creating detailed itinerary for {city}, {country}.")
+    
+    prompt = f"""I will visit {city}, {country} from {arrival} to {departure}. 
+    Create a daily itinerary with detailed activities. 
+    Designate times for breakfast, lunch, and dinner. 
 
-    Journal:
-    {journal}"""
+    I want to visit the restaurants listed in the restaurant dictionary without repeating any place.
+    Make sure to mention the specialty that I should try at each of them.
 
-    # Use LLM to determine if the journal entry is useful
-    print(f"{file} -> {get_llm_response(prompt)}")
+    Restaurant dictionary:
+    {rest_dict}
+
+    """
+    # Store the detailed itinerary for the city to the dictionary
+    detailed_itinerary[city] = get_llm_response(prompt)
 ```
+
+You can now access the detailed itinerary for any city by passing in the city name as the key to the `detailed_itinerary` dictionary:
+
+```python
+# Print in Markdown format
+display(Markdown(detailed_itinerary["Tokyo"]))
+```
+
+## Try it yourself! 
+
+Update the code below to check out the itinerary for another city. 
+
+**Options:**
+- Cape Town
+- Istanbul
+- New York
+- Paris
+- Rio de Janeiro
+- Sydney
+- Tokyo
+
+```python
+# Update the next line of code to view a different city
+display(Markdown(detailed_itinerary["YOUR CITY HERE"]))
+```
+
+## Congratulations on completing this course! 🎉🎉🎉
+
+Please go onto the fourth and final course of this sequence where you'll learn how to extend the capabilities of Python using code written by other programmers!

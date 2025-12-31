@@ -1,274 +1,202 @@
-# Lesson 6: Turning code blocks into reusable functions
+# Lesson 7: Creating itineraries for multiple cities
 
-Through this and the previous courses, you have been using several different **functions**. 
+In this lesson, you will use everything you have seen so far to plan the perfect vacation around the world!
 
-In this lesson, you'll learn how to create your own, and see how they can help you avoid writing lines of code over and over again.
-
-Let's start by importing the helper functions you'll use:
+To get started, import some helper functions:
 
 ```python
-from helper_functions import print_llm_response
-from IPython.display import Markdown, display
+from helper_functions import print_llm_response, get_llm_response, display_table
+from IPython.display import Markdown
+import csv
 ```
 
-## Revisiting functions you've already used
+## Reading travel itineraries from a CSV file
 
-Here are some of the functions you've encountered so far in these courses.
-
-The `print` function displays data to the screen:
+First, define a new function that reads data stored in a CSV file and returns it as a dictionary variable:
 
 ```python
-print("Hello World!")
-```
-
-The `len` function returns the number of items, or elements, in a list:
-
-```python
-# Create a list of friends
-friends_list = ["Tommy", "Isabel", "Daniel", "Otto"]
-
-# Return the number of friends in the list
-len(friends_list)
-```
-
-And you've been using a special helper function called `print_llm_response` to pass prompts to an LLM and display the response to screen:
-
-```python
-# The 'print_llm_response' function is in the helper_functions.py file
-print_llm_response("What is the capital of France")
-```
-
-## Defining your own functions
-
-Defining functions can help you avoid typing the same code over and over. 
-
-For example, to read in the text from different food journals, you'd need to repeat the following code:
-
-```python
-# read in the Cape Town journal
-f = open("cape_town.txt", "r")
-journal_cape_town = f.read()
-f.close()
-print(journal_cape_town)
-```
-
-```python
-# read in the Paris journal
-f = open("paris.txt", "r")
-journal_paris = f.read()
-f.close()
-print(journal_paris)
-```
-
-If you need to load multiple files, you'll have to repeat these three lines for each file.
-
-To avoid this, you can instead define a **function** to read in a file and store the contents to a variable:
-
-```python
-def print_journal(file):
+def read_csv(file):
     f = open(file, "r")
-    journal = f.read()
+    
+    csv_reader = csv.DictReader(f)
+    data = []
+    for row in csv_reader:
+        data.append(row)
     f.close()
-    print(journal)
+    
+    return data
 ```
 
-Now that you have created this function, you can reuse it to read in different files:
+Next, load itineraries from `itinerary.csv` using the function you just defined (notice how much less code this is!) and then display the table of itineraries:
 
 ```python
-# Read in the Sydney journal
-print_journal("sydney.txt")
+# Read the itinerary.csv file
+itinerary = read_csv("itinerary.csv")
+
+# Display the itinerary
+display_table(itinerary)
 ```
 
-You can define a function that **returns** a variable, rather than printing to screen:
+## Reading restaurant information from food journal entries
+
+Now create a new function called `read_journal` that reads in the contents of a plain text file with '.txt' extension and stores it into a string variable:
 
 ```python
-def read_journal(file):
-    f = open(file, "r")
-    journal = f.read()
+# The function called 'read_journal'
+def read_journal(journal_file):
+    f = open(journal_file, "r")
+    journal = f.read() 
     f.close()
-    # print(journal)
+
+    # Return the journal content
     return journal
 ```
 
-Use the `read_journal` function to store the contents of the Tokyo journal in a variable:
+Note that you used this function in an earlier lesson - now you know how it works!
+
+You can now use the `read_journal` function to read in a food journal file - let's start with Sydney:
 
 ```python
-journal_tokyo = read_journal("tokyo.txt")
+journal = read_journal("sydney.txt")
+
+print(journal)
 ```
 
-Print out the Tokyo journal content:
+Write a prompt that extracts restaurant and specialty dish information from the journal text and stores it in CSV format:
 
 ```python
-print(journal_tokyo)
+# Write the prompt
+prompt = f"""Please extract a comprehensive list of the restaurants 
+and their respective specialties mentioned in the following journal entry. 
+Ensure that each restaurant name is accurately identified and listed. 
+Provide your answer in CSV format, ready to save. 
+Exclude the "```csv" declaration, don't add spaces after the comma, include column headers.
+
+Format:
+Restaurant, Specialty
+Res_1, Sp_1
+...
+
+Journal entry:
+{journal}
+"""
+
+# Print the prompt
+print_llm_response(prompt)
 ```
 
-Print out the length of the journal - the value is the number of individual characters in the string variable `journal_tokyo`:
+Read in restaurant information from `Sydney.csv` file that was created for you and display it using the `display_table` function:
 
 ```python
-print(len(journal_tokyo))
+# Use the read_csv function
+sydney_restaurants = read_csv("Sydney.csv")
+
+display_table(sydney_restaurants)
 ```
 
-## Parameters in functions
+## Creating detailed itineraries with restaurant suggestions
 
-Previously, you saw how to use Python to carry out calculations that convert degrees Fahrenheit to degrees Celsius:
+In this section, you'll combine the data in the journal and the itinerary to create a detailed plan for your visit to Sydney. 
+
+To access Sydney's data in the ```itinerary``` list, you have to use index '6' since Sydney is the seventh trip destination.
 
 ```python
-# Value of temperature in Fahrenheit
-fahrenheit = 72
-# Calculation for getting the temperature in Celsius
-celsius = (fahrenheit - 32) * 5 / 9
-
-# Print the results
-print(f"{fahrenheit}°F is equivalent to {celsius:.2f}°C")
+# Select Sydney from the 'itinerary' list
+trip_stop = itinerary[6]
 ```
 
-If you want to convert another temperature, you have to write the code again, replacing the value for the ```fahrenheit``` variable with the new temperature to convert:
+Next, store all the information from that ```trip_stop```, as well as the restaurant information you read in above, in separate variables:
 
 ```python
-# Value of temperature in Fahrenheit
-fahrenheit = 68
-# Calculation for getting the temperature in Celsius
-celsius = (fahrenheit - 32) * 5 / 9
-
-# Print the results
-print(f"{fahrenheit}°F is equivalent to {celsius:.2f}°C")
+city = trip_stop["City"]
+country = trip_stop["Country"]
+arrival = trip_stop["Arrival"]
+departure = trip_stop["Departure"]
+restaurants = sydney_restaurants
 ```
 
-You can do this as many times as you need
+Pass all of this information in a detailed prompt to an LLM to create a detailed itinerary:
 
 ```python
-# Value of temperature in Fahrenheit
-fahrenheit = 76
-# Calculation for getting the temperature in Celsius
-celsius = (fahrenheit - 32) * 5 / 9
+# Write the prompt
+prompt = f"""I will visit {city}, {country} from {arrival} to {departure}. 
+Create a daily itinerary with detailed activities. 
+Designate times for breakfast, lunch, and dinner. 
 
-# Print the results
-print(f"{fahrenheit}°F is equivalent to {celsius:.2f}°C")
+I want to visit the restaurants listed in the restaurant dictionary 
+without repeating any place. Make sure to mention the specialty
+that I should try at each of them.
+
+Restaurant dictionary:
+{restaurants}
+
+"""
+
+response = get_llm_response(prompt)
+
+# Print the LLM response in Markdown format
+display(Markdown(response))
 ```
 
-Again, this is a lot of typing! You can avoid this by writing a function for converting Fahrenheit to Celsius. Here is the code:
+## Create detailed itineraries for all the cities in your trip
+
+You'll use a 'for' loop to iterate over all the cities in the ```itinerary``` list and create a detailed itinerary for each location:
 
 ```python
-def fahrenheit_to_celsius(fahrenheit):
-    # Calculation for getting the temperature in celsius
-    celsius = (fahrenheit - 32) * 5 / 9
-    # Print the results
-    print(f"{fahrenheit}°F is equivalent to {celsius:.2f}°C")
-```
+# Create an empty dictionary to store the itinerary for each destination
+detailed_itinerary = {}
 
-Now, instead of changing the value of the ```fahrenheit``` variable directly each time, you'll pass the desired value to the function as a ***parameter***. A parameter is a variable that is used in functions to pass in information to the function - in this case the temperature in Fahrenheit that you want to covert to Celsius.
+ # Use the 'for' loop over the 'itinerary' list   
+for trip_stop in itinerary:
+    city = trip_stop["City"]
+    country = trip_stop["Country"]
+    arrival = trip_stop["Arrival"]
+    departure = trip_stop["Departure"]
 
-Let's use the ```fahrenheit_to_celsius``` function and pass in a temperature as the input parameter!
-
-```python
-fahrenheit_to_celsius(71)
-```
-
-```python
-fahrenheit_to_celsius(70)
-```
-
-```python
-fahrenheit_to_celsius(212)
-```
-
-## Returning values
-
-To be able to save the result from the temperature conversion function, you need to include a ```return``` statement.
-
-Here is a modification of the `fahrenheit_to_celsius` function that returns the converted temperature as a variable:
-
-```python
-def fahrenheit_to_celsius(fahrenheit):
-    celsius = (fahrenheit - 32) * 5 / 9
-    # print(f"{fahrenheit}°F is equivalent to {celsius:.2f}°C")
+    rest_dict = read_csv(f"{city}.csv")
     
-    # Return the calculated value (not to print it, as before)
-    return celsius
-```
+    print(f"Creating detailed itinerary for {city}, {country}.")
+    
+    prompt = f"""I will visit {city}, {country} from {arrival} to {departure}. 
+    Create a daily itinerary with detailed activities. 
+    Designate times for breakfast, lunch, and dinner. 
 
-So when you run this function, the result is stored in a variable:
+    I want to visit the restaurants listed in the restaurant dictionary without repeating any place.
+    Make sure to mention the specialty that I should try at each of them.
 
-```python
-# The value of temperature in Fahrenheit is 45
-fahrenheit = 45
-celsius = fahrenheit_to_celsius(fahrenheit)
-```
+    Restaurant dictionary:
+    {rest_dict}
 
-You can now print the result:
-
-```python
-print(celsius)
-```
-
-Note that this function returns a number, in this case a `float`:
-
-```python
-type(celsius)
-```
-
-## Extra practice
-
-Try the exercises below to practice what you have learned in this lesson!
-
-### Exercise 1
-
-Complete the code below to create a function that converts Celsius to Fahrenheit and displays the result to the screen.
-
-**Hint:** Use the code from Fahrenheit to Celsius to help you!
-
-
-```python
-
-def celsius_to_fahrenheit():
-    # WRITE YOUR CODE HERE
-
-celsius_to_fahrenheit(0)   # Should print 32
-celsius_to_fahrenheit(100) # Should print 212
-celsius_to_fahrenheit(13)  # Should print 55.4
-```
-
-### Exercise 2
-
-Write a function below that converts a length in **meters** to a length in **feet**, then returns the result.
-
-Ask the chatbot if you're not certain of the equation!
-
-
-```python
-
-def meters_to_feet:
-    # WRITE YOUR CODE HERE
-
-print(meters_to_feet(10)) # Should print 32.8084
-print(meters_to_feet(0.7)) # Should print 2.29659
-```
-
-### Challenge exercise!
-
-Write a function that takes in a **filename** as a parameter, uses an LLM to create a three bullet point summary, and returns the bullets as a string.
-
-Use the chatbot for help when you need it!
-
-```python
-from helper_functions import get_llm_response
-
-def create_bullet_points(file):
-    # Complete code below to read in the file and store the contents as a string
-    f = open(file, "r")
-    file_contents = # YOUR CODE HERE
-
-    # Write a prompt and pass to an LLM
-    prompt = f"""YOUR PROMPT HERE
     """
-    bullets = get_llm_response() # Don't forget to add your prompt!
-
-    # Return the bullet points
-    return bullets
-
-# This line of code runs your function for istanbul.txt and returns the output
-output_bullets = create_bullet_points("istanbul.txt")
-
-# Print the fucntion output
-print(output_bullets)
+    # Store the detailed itinerary for the city to the dictionary
+    detailed_itinerary[city] = get_llm_response(prompt)
 ```
+
+You can now access the detailed itinerary for any city by passing in the city name as the key to the `detailed_itinerary` dictionary:
+
+```python
+# Print in Markdown format
+display(Markdown(detailed_itinerary["Tokyo"]))
+```
+
+## Try it yourself! 
+
+Update the code below to check out the itinerary for another city. 
+
+**Options:**
+- Cape Town
+- Istanbul
+- New York
+- Paris
+- Rio de Janeiro
+- Sydney
+- Tokyo
+
+```python
+# Update the next line of code to view a different city
+display(Markdown(detailed_itinerary["YOUR CITY HERE"]))
+```
+
+## Congratulations on completing this course! 🎉🎉🎉
+
+Please go onto the fourth and final course of this sequence where you'll learn how to extend the capabilities of Python using code written by other programmers!

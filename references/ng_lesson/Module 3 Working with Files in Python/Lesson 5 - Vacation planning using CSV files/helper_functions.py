@@ -3,7 +3,7 @@ import os
 from openai import OpenAI
 from dotenv import load_dotenv
 import csv
-import pandas as pd 
+import pandas as pd
 from IPython.display import display, HTML
 
 # Get the OpenAI API key from the .env file
@@ -25,7 +25,7 @@ def print_llm_response(prompt):
             messages=[
                 {
                     "role": "system",
-                    "content": "You are a helpful but terse AI assistant who gets straight to the point.",
+                    "content": "You are a helpful but terse AI assistant",
                 },
                 {"role": "user", "content": prompt},
             ],
@@ -47,7 +47,7 @@ def get_llm_response(prompt):
         messages=[
             {
                 "role": "system",
-                "content": "You are a helpful but terse AI assistant who gets straight to the point.",
+                "content": "You are a helpful but terse AI assistant",
             },
             {"role": "user", "content": prompt},
         ],
