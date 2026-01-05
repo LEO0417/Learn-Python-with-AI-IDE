@@ -26,11 +26,11 @@
 | Lesson | Topic | Ng Course Reference | Status |
 | :--- | :--- | :--- | :--- |
 | **M2_1** | **Variables & Context** | Mod 1 L8 (Variables), L9 (Prompts) | TODO |
-| **M2_2** | **Text Control** | Mod 1 L7 (f-strings) | TODO |
-| **M2_3** | **Data Containers** | Mod 2 L1 (Lists), L3 (Dicts) | TODO |
-| **M2_4** | **Logic Control** | Mod 2 L2 (Loops), L6 (Conditionals) | TODO |
+| **M2_2** | **Text Control** | Mod 1 L6 (Data), L7 (Calculations) | TODO |
+| **M2_3** | **Data Containers** | Mod 2 L1, L3 (Dicts), L4 (Lists) | TODO |
+| **M2_4** | **Logic Control** | Mod 2 L2 (Loops), L5, L6 (Logic) | TODO |
 | **M2_5** | **Functions Design** | Mod 1 L10 (Functions) | TODO |
-| **M2_6** | **Module Imports** | Mod 1 L10 (Modules) | TODO |
+| **M2_6** | **Module Imports** | Mod 1 L10 / Mod 2 (Library use) | TODO |
 | **M2_7** | **File Operations** | Ng Mod 3 (All) | TODO |
 | **M2_8** | **Data Overview** | Ng Mod 4 (All) | TODO |
 
