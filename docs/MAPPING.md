@@ -11,9 +11,9 @@
 | Lesson | Topic | Ng Course Reference | Status |
 | :--- | :--- | :--- | :--- |
 | **M1_1** | **Why Code & Philosophy** | Mod 1 (Intro Videos 1-3) | DONE |
-| **M1_2** | **Environment Setup** | N/A (Infrastructure) | DONE |
-| **M1_3** | **Terminal Mastery** | N/A (Prerequisite skill) | DONE |
-| **M1_4** | **Python REPL** | Mod 1 L4 (Running Code) | DONE |
+| **M1_2** | **Terminal Mastery** | N/A (Prerequisite skill) | DONE |
+| **M1_3** | **Python REPL** | Mod 1 L4 (Running Code) | DONE |
+| **M1_4** | **Environment Setup** | N/A (Infrastructure) | DONE |
 | **M1_5** | **Running Files** | Mod 1 L4 / Mod 3 L1 (File concepts) | DONE |
 | **M1_6** | **What Is IDE** | N/A (Tooling) | DONE |
 | **M1_7** | **Project Structure** | N/A (Workspace concept) | DONE |
