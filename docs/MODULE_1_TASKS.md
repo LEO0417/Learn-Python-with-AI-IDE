@@ -13,7 +13,7 @@
     *   [x] Simplified Chinese (Refactored: Env Check, System vs Venv)
     *   [x] Traditional Chinese (TW) (Localized)
 *   [x] **M1L4: Environment Setup** (Conda) `[FINALIZED]`
-    *   [x] Simplified Chinese (Refactored: Miniconda, Windows Policy)
+    *   [x] Simplified Chinese (Refactored: Miniconda, Windows Policy, Refused Chaos)
     *   [x] Traditional Chinese (TW) (Localized)
 *   [ ] **M1L5: Running Files** (Script Engineering)
     *   [ ] Simplified Chinese
