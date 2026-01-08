@@ -51,6 +51,7 @@ Provide a consistent workflow to design lesson structure for the **Module-based*
 ### 3) Quality checks
 - **Tone Check**: Are there any childish metaphors ("magic", "nest")? -> Remove them.
 - **Logic Check**: Is the "Why" explained before the "How"?
+- **Terminology Audit**: Check for SC/TC differences if applicable (e.g., 资源管理器 vs 檔案總管).
 - **Link Check**: Are cross-references to other Modules valid?
 
 ### 4) Update documentation

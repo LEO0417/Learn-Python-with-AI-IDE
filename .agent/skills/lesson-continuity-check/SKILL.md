@@ -1,4 +1,5 @@
 ---
+name: lesson-continuity-check
 description: Check lesson continuity (titles, flow, references) after content creation.
 ---
 
