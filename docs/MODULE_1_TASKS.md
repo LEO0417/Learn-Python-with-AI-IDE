@@ -15,9 +15,9 @@
 *   [x] **M1L4: Environment Setup** (Conda) `[FINALIZED]`
     *   [x] Simplified Chinese (Refactored: Miniconda, Windows Policy, Refused Chaos)
     *   [x] Traditional Chinese (TW) (Localized)
-*   [ ] **M1L5: Running Files** (Script Engineering)
-    *   [ ] Simplified Chinese
-    *   [ ] Traditional Chinese (TW)
+*   [x] **M1L5: Script Engineering** (From Oral to Written) `[FINALIZED]`
+    *   [x] Simplified Chinese
+    *   [x] Traditional Chinese (TW)
 
 ## Phase 2: Tooling (M1L6 - M1L9)
 *   [ ] **M1L6: What Is IDE** (VS Code / Cursor Basics)
