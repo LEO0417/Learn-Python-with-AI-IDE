@@ -20,7 +20,9 @@
     *   [x] Traditional Chinese (TW)
 
 ## Phase 2: Tooling (M1L6 - M1L9)
-*   [ ] **M1L6: What Is IDE** (VS Code / Cursor Basics)
+*   [x] **M1L6: What Is IDE** (VS Code / Cursor Basics) `[FINALIZED]`
+    *   [x] Simplified Chinese (Refactored: Rigorous tone, Survival Configs)
+    *   [x] Traditional Chinese (Localized)
 *   [ ] **M1L7: Project Structure** (Workspace Organization)
 *   [ ] **M1L8: AI Sidebar Agent** (Pair Programming)
 *   [ ] **M1L9: Human-AI Loop** (Collaboration Workflow)
