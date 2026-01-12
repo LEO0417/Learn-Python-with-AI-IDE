@@ -23,6 +23,15 @@
 *   [x] **M1L6: What Is IDE** (VS Code / Cursor Basics) `[FINALIZED]`
     *   [x] Simplified Chinese (Refactored: Rigorous tone, Survival Configs)
     *   [x] Traditional Chinese (Localized)
-*   [ ] **M1L7: Project Structure** (Workspace Organization)
-*   [ ] **M1L8: AI Sidebar Agent** (Pair Programming)
-*   [ ] **M1L9: Human-AI Loop** (Collaboration Workflow)
+*   [x] **M1L7: Project Structure** (Workspace Organization) `[FINALIZED]`
+    *   [x] Simplified Chinese
+    *   [x] Traditional Chinese (TW)
+*   [x] **M1L8: AI Sidebar Agent** (Pair Programming) `[FINALIZED]`
+    *   [x] Simplified Chinese
+    *   [x] Traditional Chinese (TW)
+*   [x] **M1L9: Human-AI Loop** (Collaboration Workflow) `[FINALIZED]`
+    *   [x] Simplified Chinese
+    *   [x] Traditional Chinese (TW)
+*   [x] **M1L10: Summary and Bridge** (Module 2 Prep) `[FINALIZED]`
+    *   [x] Simplified Chinese
+    *   [x] Traditional Chinese (TW)

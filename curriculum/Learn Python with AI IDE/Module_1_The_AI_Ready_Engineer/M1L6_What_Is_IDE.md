@@ -45,8 +45,8 @@
 1.  **资源管理器 (Explorer) - 左侧面板**
     *   **功能**：管理工程文件，浏览目录结构。
     *   **快捷键**：
-        *   **Mac**: `Cmd + Shift + E`
-        *   **Windows**: `Ctrl + Shift + E`
+        *   **Mac**: `Cmd + B`
+        *   **Windows**: `Ctrl + B`
 
 2.  **编辑器 (Editor) - 右上核心区**
     *   **功能**：编写代码、阅读逻辑的主要区域。
@@ -55,8 +55,8 @@
 3.  **终端面板 (Panel/Terminal) - 底部区域**
     *   **功能**：输入指令，查看解释器输出。
     *   **快捷键**：
-        *   **Mac**: `Cmd + J` 或 `Ctrl + ~`
-        *   **Windows**: `Ctrl + J` 或 `Ctrl + ~`
+        *   **Mac**: `Cmd + J`
+        *   **Windows**: `Ctrl + J`
 
 ### 2.2 核心逻辑：主体与扩展 (Core & Extensions)
 
