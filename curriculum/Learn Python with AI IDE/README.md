@@ -1,8 +1,12 @@
-# Learn Python with AI IDE (基础课主线)
+# Learn Python with AI IDE（统一主线）
 
-> **掌握从终端本源到 AI IDE 的全流程协作主权**
+统一主线内容索引（Stanford CS146S 作为实践案例）。 
 
-本目录包含“Learn Python with AI IDE”课程的所有核心教学模块。课程采用 Module 制，旨在帮助学员建立正统、严肃、专业的 AI 开发认知。
+## 入口
+- 规范与映射：`docs/ACTION_GUIDE.md`、`docs/MAPPING.md`
+- 统一课程总纲：`docs/UNIFIED_CURRICULUM.md`
+- 本周任务：`docs/WEEK1_TASKS.md`
+- 实践案例索引：`curriculum/Case Studies/README.md`
 
 ## 核心入口
 - **教学行动指南**：[`docs/ACTION_GUIDE.md`](../../docs/ACTION_GUIDE.md)
