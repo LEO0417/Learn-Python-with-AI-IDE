@@ -13,25 +13,14 @@
     *   [x] Simplified Chinese (Refactored: Env Check, System vs Venv)
     *   [x] Traditional Chinese (TW) (Localized)
 *   [x] **M1L4: Environment Setup** (Conda) `[FINALIZED]`
-    *   [x] Simplified Chinese (Refactored: Miniconda, Windows Policy, Refused Chaos)
+    *   [x] Simplified Chinese (Refactored: Miniconda, Windows Policy)
     *   [x] Traditional Chinese (TW) (Localized)
-*   [x] **M1L5: Script Engineering** (From Oral to Written) `[FINALIZED]`
-    *   [x] Simplified Chinese
-    *   [x] Traditional Chinese (TW)
+*   [ ] **M1L5: Running Files** (Script Engineering)
+    *   [ ] Simplified Chinese
+    *   [ ] Traditional Chinese (TW)
 
 ## Phase 2: Tooling (M1L6 - M1L9)
-*   [x] **M1L6: What Is IDE** (VS Code / Cursor Basics) `[FINALIZED]`
-    *   [x] Simplified Chinese (Refactored: Rigorous tone, Survival Configs)
-    *   [x] Traditional Chinese (Localized)
-*   [x] **M1L7: The Standard Workbench** (Project Structure) `[FINALIZED]`
-    *   [x] Simplified Chinese
-    *   [x] Traditional Chinese (TW)
-*   [x] **M1L8: AI Sidebar Agent** (Collaborative README Writing) `[FINALIZED]`
-    *   [x] Simplified Chinese
-    *   [x] Traditional Chinese (TW)
-*   [x] **M1L9: Human-AI Loop** (Collaboration Workflow) `[FINALIZED]`
-    *   [x] Simplified Chinese
-    *   [x] Traditional Chinese (TW)
-*   [x] **M1L10: Summary and Bridge** (Module Wrap-up) `[FINALIZED]`
-    *   [x] Simplified Chinese
-    *   [x] Traditional Chinese (TW)
+*   [ ] **M1L6: What Is IDE** (VS Code / Cursor Basics)
+*   [ ] **M1L7: Project Structure** (Workspace Organization)
+*   [ ] **M1L8: AI Sidebar Agent** (Pair Programming)
+*   [ ] **M1L9: Human-AI Loop** (Collaboration Workflow)
