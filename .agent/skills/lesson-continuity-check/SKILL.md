@@ -12,7 +12,8 @@ Whenever you finish editing or creating a lesson file (e.g., `M1L3.md`), you MUS
     - The actual filename?
     - The title referenced in the **Previous Lesson's Conclusion (Next Lesson Preview)**?
     - The title referenced in the **Next Lesson's Introduction (Previous Lesson Recap)**?
-    - The `docs/MAPPING.md` or `docs/MODULE_1_TASKS.md` tracker?
+    - The `docs/MAPPING.md` mapping table?
+    - The relevant task tracker (`docs/MODULE_1_TASKS.md` or `docs/MODULE_2_TASKS.md`)?
 - **Action**: If there is a mismatch, update **ALL** occurrences to the single source of truth.
 
 ## 2. Intro/Outro Flow (首尾呼应)

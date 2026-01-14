@@ -25,7 +25,10 @@
 ### 1.1 什么是项目？(The Project)
 在编程中，**项目 (Project)** 包含了一次开发任务所需的所有代码、数据和配置文件。
 *   **初级视角**：项目等同于一个普通的文件夹。
-*   **专业视角**：项目是你的“工程基座”。你需要清晰地划定：代码逻辑（scripts）、原材料（data）和说明文档（README）的存储边界。
+*   **专业视角**：项目是你的“工程基座”。你需要清晰地划定：
+    *   **逻辑 (Scripts)**：你写的代码文件。
+    *   **原料 (Data)**：项目运行需要的数据。
+    *   **说明书 (README)**：项目的“身份证”，告诉别人（以及 AI）这个项目是干什么的。
 
 ### 1.2 为什么必须规范化？
 1.  **可移植性 (Portability)**：规范的结构能确保你的代码在分享给他人或换台电脑时，依然能直接运行。
@@ -67,14 +70,28 @@ IDE 左侧的**资源管理器 (Explorer)** 并不是一个独立的虚拟空间
 ### 4.1 搬迁资产
 在 IDE 的资源管理器中：
 1.  **创建目录**：新建文件夹 `scripts` 和 `data`。
-2.  **移动资产**：将 `ide_demo.py` 以及之前的脚本全部拖入 `scripts` 中。
+2.  **创建说明书**：在根目录下新建一个文件 `README.md`。暂时留空即可，它是我们下一课与 AI 协作的核心靶场。
+3.  **移动资产**：将 `ide_demo.py` 以及之前的脚本全部拖入 `scripts` 中。
 
 ### 4.2 代码验证：我是谁？他在哪？
 1.  在 `scripts/` 下新建一个文件 `path_check.py`，写入：
     ```python
     import os
-    # 打印当前的工作目录
-    print("当前工作台锚点 (WorkDir):", os.getcwd())
+
+    print("--- 路径分析仪表盘 ---")
+    
+    # 1. 我在哪？(The Anchor)
+    # 打印当前的工作目录 (Current Working Directory)
+    cwd = os.getcwd()
+    print(f"当前工作台锚点 (CWD): {cwd}")
+
+    # 2. 相对路径 vs 绝对路径演示
+    # 假设我们要找 data 文件夹
+    relative_path = "./data" 
+    absolute_path = os.path.abspath(relative_path)
+
+    print(f"相对路径 (我们写的): {relative_path}")
+    print(f"绝对路径 (系统算的): {absolute_path}")
     ```
 
 > **💡 代码小科普：**

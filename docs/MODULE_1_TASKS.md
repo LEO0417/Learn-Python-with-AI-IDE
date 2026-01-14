@@ -26,7 +26,7 @@
 *   [x] **M1L7: The Standard Workbench** (Project Structure) `[FINALIZED]`
     *   [x] Simplified Chinese
     *   [x] Traditional Chinese (TW)
-*   [x] **M1L8: AI Sidebar Agent** (Pair Programming) `[FINALIZED]`
+*   [x] **M1L8: AI Sidebar Agent** (Collaborative README Writing) `[FINALIZED]`
     *   [x] Simplified Chinese
     *   [x] Traditional Chinese (TW)
 *   [x] **M1L9: Human-AI Loop** (Collaboration Workflow) `[FINALIZED]`
