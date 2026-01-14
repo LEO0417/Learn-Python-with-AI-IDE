@@ -55,4 +55,5 @@ git -C /tmp/office-code-upstream reset --hard origin/master
 
 ## Notes
 - `references/office-code/` 视为官方快照目录，默认不直接修改其中代码。
+- `references/` 目录仅在官方更新时改动，禁止手动修改。
 - 如需做对比或改造，建议复制到其他目录再操作。

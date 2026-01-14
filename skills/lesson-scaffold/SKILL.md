@@ -1,6 +1,6 @@
 ---
 name: lesson-scaffold
-description: Build or refactor lessons for the two-track curriculum (Learn Python with AI IDE + Stanford CS146S) into the “讲义 + 练习” format. Use when creating a new lesson, rewriting Stanford week content, adding exercises, or updating `docs/MAPPING.md`, `docs/WEEK1_TASKS.md`, and `docs/WORKLOG/*.md`.
+description: Build or refactor lessons for the unified Python curriculum, with Stanford CS146S as practice case studies, into the “讲义 + 练习” format. Use when creating a new lesson, rewriting case-study week content, adding exercises, or updating `docs/MAPPING.md`, `docs/WEEK1_TASKS.md`, and `docs/WORKLOG/*.md`.
 ---
 
 # Lesson Scaffold
@@ -12,10 +12,11 @@ Provide a consistent workflow to design lesson structure, write exercises, and k
 ## Workflow
 
 ### 1) Clarify scope
-- Identify track: `curriculum/Learn Python with AI IDE` (main track) or `curriculum/Stanford CS146S` (support track).
+- Identify scope: main lessons in `curriculum/Learn Python with AI IDE`, or practice case studies in `curriculum/Case Studies/Stanford CS146S`.
 - Identify target week/lesson and the source file(s) to refactor.
 - Confirm expected output location and any required cross-links.
 - Reference sources: `references/office-code/` (official code) and `references/ng_lesson/` (parallel course).
+- Do not modify `references/` unless it is an official update.
 
 ### 2) Draft lesson skeleton
 - Use the standard “讲义 + 练习” frame, keep sections minimal and practical.
