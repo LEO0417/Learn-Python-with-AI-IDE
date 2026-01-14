@@ -1,62 +1,58 @@
 ---
 name: lesson-scaffold
-description: Build or refactor lessons for the unified Python curriculum, with Stanford CS146S as practice case studies, into the “讲义 + 练习” format. Use when creating a new lesson, rewriting case-study week content, adding exercises, or updating `docs/MAPPING.md`, `docs/WEEK1_TASKS.md`, and `docs/WORKLOG/*.md`.
+description: Build or refactor lessons for the Mainline 1 (Module-based) or Mainline 2 curriculums. Use when creating new lessons, ensuring they adhere to the "Professional & Rigorous" tone and standard structure.
 ---
 
 # Lesson Scaffold
 
 ## Overview
 
-Provide a consistent workflow to design lesson structure, write exercises, and keep mapping/tasks/logs in sync for the two-track curriculum.
+Provide a consistent workflow to design lesson structure for the **Module-based** curriculum (Mainline 1) and the Stanford Companion (Mainline 2).
 
 ## Workflow
 
 ### 1) Clarify scope
-- Identify scope: main lessons in `curriculum/Learn Python with AI IDE`, or practice case studies in `curriculum/Case Studies/Stanford CS146S`.
-- Identify target week/lesson and the source file(s) to refactor.
-- Confirm expected output location and any required cross-links.
-- Reference sources: `references/office-code/` (official code) and `references/ng_lesson/` (parallel course).
-- Do not modify `references/` unless it is an official update.
+- **Track**: `Mainline 1` (Foundation, Module 1-4) or `Mainline 2` (Stanford Application).
+- **Module/Lesson**: e.g., `M1_2` (Module 1 Lesson 2).
+- **Reference**: Check `docs/MAPPING.md` and `references/ng_lesson/`.
 
 ### 2) Draft lesson skeleton
-- Use the standard “讲义 + 练习” frame, keep sections minimal and practical.
-- Include the smallest runnable example and its expected output.
+- **Tone**: Professional, Rigorous, No Metaphors.
+- **Structure**:
 
 ```markdown
-# 课程标题
+# Module X Lesson Y: [Title]
 
-## 课程目标
-- ...
+> **Module X: [Module Name]**
+> 目标：[One sentence goal]
 
-## 关键概念
-- 概念 1：定义 + 常见误区
+---
 
-## 演示与拆解
-- 最小示例
-- 逐行解释
+## 1. Philosophy/Why (理论)
+- 为什么学这个？
+- 解决什么工程问题？
+- (Optional) 对比传统模式 vs AI 模式。
 
-## 练习
-- 练习 1（复现）
-- 练习 2（改写）
-- 练习 3（迁移）
+## 2. The Raw Logic (机制)
+- 底层发生了什么？(e.g., CPU, Memory, Shell, Interpreter)
+- 破除黑盒，讲解原理。
 
-## 复盘清单
-- 我能运行并得到预期输出
-- 我能解释关键语句
-- 我能改写并通过自测
+## 3. Instruction (指令)
+```bash
+# 具体命令或代码
+```
+- 逐步执行。
+
+## 4. Practice (硬核练习)
+- 练习 1：[Action] -> [Expected Output]
+- 练习 2：[Action] -> [Expected Output]
 ```
 
-### 3) Write exercises
-- Provide 2-3 exercises per concept: reproduce → modify → transfer.
-- Add a concrete “运行后看到什么” for each exercise.
-- Keep inputs/output simple and verifiable.
+### 3) Quality checks
+- **Tone Check**: Are there any childish metaphors ("magic", "nest")? -> Remove them.
+- **Logic Check**: Is the "Why" explained before the "How"?
+- **Link Check**: Are cross-references to other Modules valid?
 
-### 4) Update cross-links
-- Update `docs/MAPPING.md` with the new lesson mapping or status.
-- Update `docs/WEEK1_TASKS.md` if tasks are completed or re-scoped.
-- Append a short note to today’s `docs/WORKLOG/YYYY-MM-DD.md`.
-
-### 5) Quality checks
-- Ensure terms and names are consistent across tracks.
-- Ensure code blocks are runnable and outputs are deterministic.
-- Ensure the lesson matches the target audience (zero baseline).
+### 4) Update documentation
+- Update `docs/MAPPING.md` status.
+- Update `docs/WORKLOG/`.

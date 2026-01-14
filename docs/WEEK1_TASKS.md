@@ -1,27 +1,25 @@
-# Week1 任务清单（统一主线）
+# Week1 任务清单（双主线）
 
-目标：完成 Week1 的结构重构与内容落地，形成“主线课程 + 实践案例”的统一体系。
+目标：完成 Week1 的结构重构与内容落地，形成主线 1 与主线 2 的互引用体系。
 
-## 一、主线课程（Learn Python with AI IDE）
+## 一、主线 1（Learn Python with AI IDE）
 - [ ] 设计 Week1 课程结构（讲义 + 练习），明确每节课的目标与产出。
-- [x] 拆分并完成 Week1-1 讲义草案（4 课 + PPT 分页）：`curriculum/Learn Python with AI IDE/week1/README.md`
-- [x] 编写 Lesson0 学习理念总论：`curriculum/Learn Python with AI IDE/week1/Week1-Lesson0-总论.md`
 - [ ] 补齐零基础必需知识：终端基础、环境概念、文件与路径、Python 模块与函数。
 - [ ] 引入 AI IDE 与 Ollama 的最小可运行实践（脚本可运行、输出可验证）。
 - [ ] 为每节课提供 2-3 个练习：复现、改写、迁移。
 - [ ] 每节课附带复盘清单与常见错误说明。
 
-## 二、实践案例（Stanford CS146S）
-- [ ] 重构 `curriculum/Case Studies/Stanford CS146S/week1` 讲义为“讲义 + 练习”格式，保持技术精度但降低入门门槛。
+## 二、主线 2（斯坦福 Week1）
+- [ ] 重构 `curriculum/Stanford CS146S/week1` 讲义为“讲义 + 练习”格式，保持技术精度但降低入门门槛。
 - [ ] 将现有 W1D5-W1D8 内容拆分为可读单元（概念、示例、练习）。
-- [ ] 在实践案例中明确“主线课程的补课链接”。
+- [ ] 在主线 2 中明确“推荐主线 1 的补课链接”。
 - [ ] 统一术语与命名（环境名、模型名、文件名）。
 - [ ] 编写讲义时对照 `references/office-code/week1` 与 `references/ng_lesson`，确保概念与示例一致。
 
-## 三、整合与引用
+## 三、映射与引用
 - [ ] 更新 `docs/MAPPING.md` 中 Week1 映射内容到可执行状态（从 TODO 到 DOING/DONE）。
-- [ ] 更新 `curriculum/Learn Python with AI IDE/week1/Week1-Overview.md`，确保主线与案例互引。
-- [ ] 标注主线课程与 `references/ng_lesson` 的参考路径与使用方式。
+- [ ] 标注主线 1 与 `references/ng_lesson` 的参考路径与使用方式。
+- [ ] 确定 Week1 的“主线 1 ↔ 主线 2”互跳链接点。
 
 ## 四、验收标准
 - [ ] 学员从零基础可运行 Week1 所有示例脚本。

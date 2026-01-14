@@ -1,16 +1,45 @@
-# 课程与实践案例映射表
+# 基础课 (Learn Python with AI IDE) & Ng 课程映射
 
-说明：
-- 主线课程：`curriculum/Learn Python with AI IDE/`
-- 实践案例：`curriculum/Case Studies/Stanford CS146S/`（暂含 week1-week2）
-- 官方代码参考：`references/office-code/`（课程讲义需对照该目录）
-- 状态：`TODO` / `DOING` / `DONE`
+> **基础课程**: `curriculum/Learn Python with AI IDE/`
+> **Reference**: `references/ng_lesson/` (Andrew Ng's AI Python for Beginners)
 
-| 实践案例节点 | 案例讲义 | 主线课程 | 主线知识点 | 官方代码复现 | ng_lesson 参考 | 状态 |
-| --- | --- | --- | --- | --- | --- | --- |
-| W1D5 | `curriculum/Case Studies/Stanford CS146S/week1/斯坦福课程「CS146S现代软件开发者」W1D5：ollama搭建 & 用python脚本和LLM对话.md` | `curriculum/Learn Python with AI IDE/week1/Week1-Overview.md`（Lesson0-4） | 终端入门、环境搭建、IDE 与脚本运行、综合演练 | `references/office-code/week1/assignment.md` | `references/ng_lesson/Module 1 Basics of AI Python Coding/Lesson 4 - Running your first program/...` | DOING |
-| W1D6 | `curriculum/Case Studies/Stanford CS146S/week1/斯坦福课程「CS146S现代软件开发者」W1D6：AI 编程基石——从“随性聊天”到“逻辑控制”.md` | Week1-2：数据结构与逻辑控制 | list/dict、bool、loop、函数封装 | `references/office-code/week1/*.py` | `references/ng_lesson/Module 1 Basics of AI Python Coding/Lesson 6 - Data in Python/...` | TODO |
-| W1D7 | `curriculum/Case Studies/Stanford CS146S/week1/斯坦福课程「CS146S现代软件开发者」W1D7：提示词工程（1）——K-shot 少样本提示.md` | Week1-3：提示词基础与变量 | 字符串、变量、基础格式控制 | `references/office-code/week1/k_shot_prompting.py` | `references/ng_lesson/Module 1 Basics of AI Python Coding/Lesson 8 - Variables/...` | TODO |
-| W1D8 | `curriculum/Case Studies/Stanford CS146S/week1/斯坦福课程「CS146S现代软件开发者」W1D8：提示词工程（2）——思维链 CoT.md` | Week1-4：结构化输出与思维链 | 输出格式、正则与基础校验思路 | `references/office-code/week1/chain_of_thought.py` | `references/ng_lesson/Module 2 Automating Tasks with Python/Lesson 6 - Helping AI make decisions/...` | TODO |
-| Week1 作业 | `references/office-code/week1/assignment.md` | Week1-5：从脚本到练习 | 运行脚本、改写 Prompt、检查输出 | `references/office-code/week1/*.py` | `references/ng_lesson/Module 1 Basics of AI Python Coding/Lesson 9 - Building LLM prompts with variables/...` | TODO |
-| Week2-Week8 | 斯坦福周次材料 | 主线课程对应周次 | 待补齐 | 待补齐 | 待补齐 | TODO |
+此表用于追踪 Learn Python with AI IDE (基础课程) 与 Andrew Ng 课程知识点的对应关系。
+
+## Module 1: The AI-Ready Engineer
+**Goal**: 从终端本源到 AI IDE 工作流。
+
+| Lesson | Topic | Ng Course Reference | Status |
+| :--- | :--- | :--- | :--- |
+| **M1_1** | **Why Code & Philosophy** | Mod 1 (Intro Videos 1-3) | DONE |
+| **M1_2** | **Environment Setup** | N/A (Infrastructure) | DONE |
+| **M1_3** | **Terminal Mastery** | N/A (Prerequisite skill) | DONE |
+| **M1_4** | **Python REPL** | Mod 1 L4 (Running Code) | DONE |
+| **M1_5** | **Running Files** | Mod 1 L4 / Mod 3 L1 (File concepts) | DONE |
+| **M1_6** | **What Is IDE** | N/A (Tooling) | DONE |
+| **M1_7** | **Project Structure** | N/A (Workspace concept) | DONE |
+| **M1_8** | **AI Sidebar Agent** | N/A (Tooling) | DONE |
+| **M1_9** | **Human-AI Loop** | Mod 1 Intro (Collaboration logic) | DONE |
+
+## Module 2: Python Essentials with AI IDE
+**Goal**: 在 AI IDE 辅助下系统学习 Python 核心（全量对齐 Ng 课程）。
+
+| Lesson | Topic | Ng Course Reference | Status |
+| :--- | :--- | :--- | :--- |
+| **M2_1** | **Variables & Context** | Mod 1 L8 (Variables), L9 (Prompts) | TODO |
+| **M2_2** | **Text Control** | Mod 1 L7 (f-strings) | TODO |
+| **M2_3** | **Data Containers** | Mod 2 L1 (Lists), L3 (Dicts) | TODO |
+| **M2_4** | **Logic Control** | Mod 2 L2 (Loops), L6 (Conditionals) | TODO |
+| **M2_5** | **Functions Design** | Mod 1 L10 (Functions) | TODO |
+| **M2_6** | **Module Imports** | Mod 1 L10 (Modules) | TODO |
+| **M2_7** | **File Operations** | Ng Mod 3 (All) | TODO |
+| **M2_8** | **Data Overview** | Ng Mod 4 (All) | TODO |
+
+---
+
+# Stanford CS146S 前置要求
+此表用于标记 Stanford CS146S 课程需要的前置 Module 技能。
+
+| Stanford Week | 所需基础课程 Module |
+| :--- | :--- |
+| **Week 1** | Module 1 |
+| **Week 2** | Module 2 (Essentials) |

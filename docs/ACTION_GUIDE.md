@@ -1,68 +1,49 @@
-# 教学行动指南（最高版本）
+# 教学行动指南 (Action Guide) - V2.0
 
-本指南用于统一教学理念、内容结构与落地流程，适用于统一主线课程及其配套实践案例的建设与复盘。
+本指南用于统一教学理念、内容结构与落地流程，适用于两条主线的全部课程建设与复盘。
 
-## 1. 教学定位
-- 受众：零基础学习者，对 IDE、终端无概念，中文为主。
-- 目标：通过项目导向学习，理解核心概念与逻辑，能读懂并复现项目。
-- 核心能力：读懂代码、运行代码、改写代码、复盘过程。
+## 1. 教学定位 (Philosophy)
+- **受众**：希望以正统、严肃方式掌握 AI 时代编程能力的初学者。
+- **基调**：**严肃、硬核、专业 (Professional & Rigorous)**。
+    - 拒绝低幼化隐喻（如“婴儿”、“魔法棒”）。
+    - 强调“精确性”与“逻辑判断力”。
+    - 将学员视为未来的工程师或 AI 协作指挥官。
+- **目标**：不只是“跑通代码”，而是建立对计算机底层（终端、解释器）与顶层（AI IDE）的完整认知。
 
-## 2. 统一主线 + 实践案例
-- 主线（Learn Python with AI IDE）：为零基础提供完整知识铺垫，覆盖 Python + 终端 + AI IDE + Ollama + NG 相关基础。
-- 实践案例（Stanford CS146S）：作为实践课程案例，用于复现实战代码与理念，不再作为独立主线。
-- 维护：主线与实践案例的对应关系在 `docs/MAPPING.md` 中维护。
+## 2. 课程体系 (Curriculum Tracks)
+### Learn Python with AI IDE (基础课)
+- **架构**：**Module 制**（非 Week 制）。
+- **内容**：分两大阶段。
+    - **Module 1**: 从“原声终端”到“AI IDE 工作流”。建立工程基座。
+    - **Module 2**: 在 AI IDE 辅助下系统学习 Python 核心体系（对齐 Ng 课程）。
+- **目录**：`curriculum/Learn Python with AI IDE/Module_X_.../`
 
-## 3. 叙述风格与结构
-- 风格：讲义 + 练习，避免口播稿式叙事。
-- 表达：短句、分层、概念先行；每个概念必须配最小示例。
-- 连贯性：统一术语与命名（如环境名、工具名、模型名）。
+### Stanford CS146S (配套演练)
+- **架构**：**Week 制**（跟随 Stanford 进度）。
+- **内容**：基于斯坦福 CS146S 的**配套讲义**。
+- **目标**：应用基础技能，构建 Agent、RAG 等实际 AI 应用。
+- **目录**：`curriculum/Stanford CS146S/weekX/`
 
-## 4. 单课模板（建议）
-- 课程目标（学完能做什么）
-- 关键概念（术语、心智模型、常见误区）
-- 演示与拆解（最小可运行示例 + 逐行解释）
-- 练习（从仿写到改写到迁移）
-- 复盘清单（学员自检）
+## 3. 课程结构标准 (Lesson Structure)
+每节课名为 `M{Module}_{Sequence}_{Topic}.md`（如 `M1_2_Terminal_Basics.md`），需包含：
 
-## 5. 练习设计原则
-- 由浅入深：先复现，再改写，最后迁移到小任务。
-- 可验证：每个练习明确“运行后看到什么输出”。
-- AI 协作：鼓励使用 AI 解释、定位报错、生成变体，但必须写出自己的改动。
+1.  **Philosophy/Why (理论)**：为什么学这个？解决什么工程问题？
+2.  **The Raw Logic (机制)**：底层发生了什么？（如 Shell 如何调用 Python）
+3.  **Instruction (指令)**：具体的命令或代码。
+4.  **Practice (硬核练习)**：不只是复现，要求在终端/IDE 中实际操作并验证结果。
 
-## 6. 素材与引用
-- Stanford 官方代码以 `references/office-code/` 为准，课程讲义撰写时必须对照官方实现。
-- `curriculum/Case Studies/Stanford CS146S/` 内以讲义与课程材料为主，不作为官方代码来源。
-- `references/ng_lesson/` 作为并行参考，优先补齐主线课程的 Python 基础。
-- `references/` 目录为官方/参考快照，除非来自官方更新，否则禁止手动修改。
-- 引用时标注文件路径，避免无出处的信息拼贴。
+## 4. 映射与维护 (Mapping)
+- **核心映射**：基础课程的 Module 知识点需映射参考 **Andrew Ng** 的 Python 课程 (Module 1 & 2)。
+- **文档维护**：
+    - `docs/MAPPING.md`: 维护基础课程与 Ng 课程的知识点对照。
+    - `docs/MODULE_TASKS.md`: 追踪 Module 建设进度。
 
-## 7. 文件与命名规范
-- 课程主线：`curriculum/Learn Python with AI IDE/`。
-- 实践案例：`curriculum/Case Studies/Stanford CS146S/`（暂含 week1-week2）。
-- 官方代码：`references/office-code/`（官方仓库快照）。
-- 文档中心：`docs/`，包含行动指南、映射表、任务清单、工作日志。
-- 本地技能：`skills/`，存放课程编排与维护用的 Codex 技能。
-- 旧内容：`curriculum/Learn Python with AI IDE/legacy/` 视为历史素材，不再作为新主线模板。
+## 5. 术语规范 (Terminology)
+- 统一使用英文术语 + 中文解释。例如：`Terminal (终端)`, `Interpreter (解释器)`, `Repository (仓库)`。
+- IDE 统一称为 **Antigravity** 或 **AI IDE**。
+- 引用斯坦福课程时，使用 **CS146S**。
 
-## 8. 完成标准（Definition of Done）
-- 课程具备可复现步骤（命令、文件、预期结果）。
-- 术语一致，跨文档不冲突。
-- 练习可独立完成并有答案检验方式。
-- 映射表已更新，课程与实践案例互引完整。
-
-## 9. 本地技能索引
-- `lesson-scaffold`：`skills/lesson-scaffold/SKILL.md`，用于将课程内容整理为“讲义 + 练习”格式，并同步映射表、任务清单与工作日志。
-- `office-code-sync`：`skills/office-code-sync/SKILL.md`，用于同步官方仓库到 `references/office-code/` 目录。
-- `ng-lesson-sync`：`skills/ng-lesson-sync/SKILL.md`，用于同步 DeepLearning.AI ng_lesson 官方课件到 `references/ng_lesson/`。
-
-## 10. 更新流程
-- 每日更新 `docs/WORKLOG/`。
-- 每次新增或调整课程内容，必须同步更新映射表与任务清单。
-- 每周复盘一次结构与进度，修正偏差。
-
-## 11. `references/ng_lesson/` 手动同步流程
-- 同步前确认官方页面与范围（记录 URL 与日期）。
-- 对比本地与官方内容差异，标出新增/修改点。
-- 仅在确认是官方更新时同步到 `references/ng_lesson/`。
-- 在当日 `docs/WORKLOG/YYYY-MM-DD.md` 记录同步范围、来源 URL、差异摘要。
-- 可使用 `skills/ng-lesson-sync/scripts/ng_lesson_sync.py` 自动化同步（需登录 cookie）。
+## 6. 完成标准 (Definition of Done)
+- 风格检查：无低幼隐喻，逻辑严密。
+- 闭环验证：所有命令/代码在无前置假设的环境下可运行。
+- 知识对齐：覆盖 Ng 课程对应的核心技术点。
