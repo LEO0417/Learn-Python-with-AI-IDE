@@ -77,9 +77,10 @@
     - `docs/MODULE_TASKS.md`: 追踪 Module 建设进度。
 
 ## 5. 术语规范 (Terminology)
-- 统一使用英文术语 + 中文解释。例如：`Terminal (终端)`, `Interpreter (解释器)`, `Repository (仓库)`。
-- IDE 统一称为 **Antigravity** 或 **AI IDE**。
 - 引用斯坦福课程时，使用 **CS146S**。
+- **两岸术语差异 (Cross-Strait Terminology)**：在编写 `_TW.md` 版本时，必须遵循该地区的习惯，严禁直接繁简转换。
+    - **SC (简体)**: 资源管理器, 扩展/插件, 终端, 命令面板, 标签页, 变量, 文件夹。
+    - **TC (繁体)**: 檔案總管, 延伸模組/外掛, 終端機, 指令面板, 分頁, 變數, 資料夾。
 
 ## 6. 完成标准 (Definition of Done)
 - 风格检查：无低幼隐喻，逻辑严密。

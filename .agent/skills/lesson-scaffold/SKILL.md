@@ -12,46 +12,40 @@ Provide a consistent workflow to design lesson structure for the **Module-based*
 ## Workflow
 
 ### 1) Clarify scope
-- **Refer to Single Source of Truth**: You **MUST** read `docs/MAPPING.md` to identify the required knowledge points and alignment with the Andrew Ng curriculum.
 - **Track**: `Mainline 1` (Foundation, Module 1-4) or `Mainline 2` (Stanford Application).
 - **Module/Lesson**: e.g., `M1_2` (Module 1 Lesson 2).
-- **Reference**: Also check `references/ng_lesson/` for source material.
+- **Reference**: Check `docs/MAPPING.md` and `references/ng_lesson/`.
 
 ### 2) Draft lesson skeleton
-- **Tone**: Professional, Rigorous, Welcoming.
+- **Tone**: Professional, Rigorous, No Metaphors.
 - **Structure**:
 
 ```markdown
 # Module X Lesson Y: [Title]
 
-> **课程体系：Learn Python with AI IDE**
-> **当前模块**：Module X - [Module Name]
-> **本课目标**：[Goal description]
+> **Module X: [Module Name]**
+> 目标：[One sentence goal]
 
 ---
 
-## 1. 🔙 Backtrack (前修回顾)
-- [Review concept from previous lesson]
+## 1. Philosophy/Why (理论)
+- 为什么学这个？
+- 解决什么工程问题？
+- (Optional) 对比传统模式 vs AI 模式。
 
-## 2. 📅 Today's Teaser (今日预告)
-- [Why this matters, motivation]
+## 2. The Raw Logic (机制)
+- 底层发生了什么？(e.g., CPU, Memory, Shell, Interpreter)
+- 破除黑盒，讲解原理。
 
-## 3. 🏗️ Core Meaning (核心逻辑/机制)
-- [Explanation of the "Why" and underlying physics]
-
-## 4. 🛠️ Practical Practice (操作与练习)
+## 3. Instruction (指令)
 ```bash
-# Code or commands
+# 具体命令或代码
 ```
+- 逐步执行。
 
-## 5. 🔥 Efficiency Tips (提亮/进阶)
-- [IDE shortcuts or productivity hacks]
-
-## 6. ✅ Checkpoint (自测与验收)
-- [Pass criteria]
-
-## 7. 🔄 Summary & Next Stop (复盘与预告)
-- [Summary and bridge to next lesson]
+## 4. Practice (硬核练习)
+- 练习 1：[Action] -> [Expected Output]
+- 练习 2：[Action] -> [Expected Output]
 ```
 
 ### 3) Quality checks
