@@ -32,9 +32,11 @@ Each lesson should ideally follow this flow:
     - SC: 终端, 变量, 文件夹.
     - TC: 終端機, 變數, 資料夾.
 
-## 4. Immutable Foundation
-- Lessons M1L1 through M1L6 are considered **FINALIZED**.
-- Do not change their core definitions or order. Any new content must adapt to them.
+## 4. Content Locking & Immortality (定稿锁定准则)
+- **Freeze Rule**: Once the USER declares a lesson as **FINALIZED (定稿)**, that lesson and ALL preceding lessons (L1 to current) enter a "Frozen State".
+- **Modification Ban**: AI must not modify or propose changes to frozen documents unless specifically requested by the USER to "Unlock" or "Refactor" them.
+- **Dependency Handling**: Future lessons must adapt to the definitions and logic established in the frozen foundations, not the other way around.
+- **Current Status**: Lessons **M1L1 through M1L7** are now considered **FINALIZED**.
 
 ## 5. Metadata Header
 Every lesson must start with:

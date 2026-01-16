@@ -1,4 +1,4 @@
-# Module 1 Lesson 2: 工程师的第一语言：终端 (Terminal)
+# Module 1 Lesson 2: 掌握终端：工程师的第一母语
 
 > **课程体系：Learn Python with AI IDE**
 > **当前模块**：Module 1 - The AI Ready Engineer

@@ -1,4 +1,4 @@
-# Module 1 Lesson 5: 腳本工程 —— 從「口述」到「寫作」
+# Module 1 Lesson 5: 腳本工程：從「口述」到「寫作」
 
 > **課程體系：Learn Python with AI IDE**
 > **當前模組**：Module 1 - The AI Ready Engineer

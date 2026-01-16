@@ -1,4 +1,4 @@
-# Module 1 Lesson 2: 工程師的第一語言：終端機 (Terminal)
+# Module 1 Lesson 2: 掌握終端機：工程師的第一母語
 
 > **課程體系：Learn Python with AI IDE**
 > **當前模組**：Module 1 - The AI Ready Engineer

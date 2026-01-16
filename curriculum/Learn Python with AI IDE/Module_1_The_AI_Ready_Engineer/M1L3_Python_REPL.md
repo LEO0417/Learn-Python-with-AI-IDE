@@ -1,4 +1,4 @@
-# Module 1 Lesson 3: 唤醒 Python：REPL 初体验
+# Module 1 Lesson 3: 唤醒引擎：与 Python 解释器的“即时对话”
 
 > **课程体系：Learn Python with AI IDE**
 > **当前模块**：Module 1 - The AI Ready Engineer

@@ -1,4 +1,4 @@
-# Module 1 Lesson 1: 為什麼在 AI 時代還要學寫程式？
+# Module 1 Lesson 1: 為什麼在 AI 時代還要學程式碼？
 
 > **課程體系：Learn Python with AI IDE**
 > **當前模組**：Module 1 - The AI Ready Engineer

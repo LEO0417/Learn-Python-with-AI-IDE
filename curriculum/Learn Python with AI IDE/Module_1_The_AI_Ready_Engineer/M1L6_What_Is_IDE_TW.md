@@ -1,4 +1,4 @@
-# Module 1 Lesson 6: 整合中心：掌握 AI IDE 的核心配置
+# Module 1 Lesson 6: 整合中心：掌握 AI IDE 的核心
 
 > **課程體系：Learn Python with AI IDE**
 > **當前模組**：Module 1 - The AI Ready Engineer
