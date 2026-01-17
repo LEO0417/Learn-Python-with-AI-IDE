@@ -1,4 +1,5 @@
-# Learn Python with AI IDE | Module  TEN Finalized Lessons
+
+---
 
 用AI IDE学Python｜第一章 第一课｜为什么在 AI 时代还要学代码？
 用AI IDE學Python｜第一章 第一課｜為什麼在 AI 時代還要學程式碼？
@@ -22,7 +23,7 @@ Learn Python with AI IDE | Module1 Lesson2 Terminal Mastery
 用AI IDE學Python｜第一章 第三課｜喚醒引擎：與 Python 解釋器的「即時對話」
 Learn Python with AI IDE | Module1 Lesson3 Python REPL
 > **视频简介 (SC)**：终端大门已开，是时候见见我们的主角了。我们不急着写长篇大论，先来一场“面对面”的即时交流。唤醒 Python 解释器，感受它的逻辑和温度，体验那种“指尖跳动、实时回馈”的编程快感。
-> **影片簡介 (TC)**：終端機大門已開，是時候見見我們的主角了。我們不急著寫長篇大論，先來一場「面對面」的即時交流。喚醒 Python 解釋器，感受它的邏輯和溫度，體驗那種「指尖跳動、即時回饋」的編程快感。
+> **影片簡介 (TC)**：終端機大門已開，是時候見見我們主角了。我們不急著寫長篇大論，先來一場「面對面」的即時交流。喚醒 Python 解釋器，感受它的邏輯和溫度，體驗那種「指尖跳動、即時回饋」的編程快感。
 > **Video Description (EN)**: The curtains are up; it’s time to meet our protagonist. Before we write grand architectures, let’s have a "face-to-face" chat. Wake up the Python interpreter and feel its logic, experiencing the thrill of instant feedback at your fingertips.
 
 ---
@@ -37,7 +38,7 @@ Learn Python with AI IDE | Module1 Lesson4 Environment Setup
 ---
 
 用AI IDE学Python｜第一章 第五课｜脚本工程：从“口述”到“写作”
-用AI IDE學Python｜第一章 第五課｜腳 本工程：從「口述」到「寫作」
+用AI IDE學Python｜第一章 第五課｜腳本工程：從「口述」到「寫作」
 Learn Python with AI IDE | Module1 Lesson5 Script Engineering
 > **视频简介 (SC)**：即时对话固然爽，但它随用随弃。要构建真正的大厦，我们需要把思想“持久化”。从这一刻起，我们从“口述”转为“写作”。带你亲手打造第一个脚本文件，并学会像专业工程师一样驱动它们运行。
 > **影片簡介 (TC)**：即時對話固然爽，但它隨用隨棄。要構建真正的大廈，我們需要把思想「持久化」。從這一刻起，我們從「口述」轉為「寫作」。帶你親手打造第一個腳本檔案，並學會像專業工程師一樣驅動它們執行。
@@ -60,3 +61,12 @@ Learn Python with AI IDE | Module1 Lesson7 The Standard Workbench
 > **视频简介 (SC)**：如果你和 AI 的“共用桌面”乱成一团，那即便有再强的助教也没用。本集带你通过「标准工作台」思维，为项目建立规矩。规范你的目录、理解相对路径，在 AI 助理正式进场前，打造一个让它也能一眼看懂的有序工程底座。
 > **影片簡介 (TC)**：如果你和 AI 的「共用桌面」亂成一團，那即便有再強的助教也沒用。本集帶你透過「標準工作台」思維，為專案建立規矩。規範你的目錄、理解相對路徑，在 AI 助理正式進場前，打造一個讓它也能一眼看懂的有序工程底座。
 > **Video Description (EN)**: If your shared workspace with AI is a mess, even the most powerful assistant won't save you. In this episode, we set the rules using the "Standard Workbench" mindset. Organize your directories and master relative paths to build a logical foundation that AI can understand instantly before it officially joins the project.
+
+---
+
+用AI IDE学Python｜第一章 第八课｜AI Sidebar Agent：上下文机制与执行授权管理
+用AI IDE學Python｜第一章 第八課｜AI Sidebar Agent：上下文機制與執行授權管理
+Learn Python with AI IDE | Module1 Lesson8 AI Sidebar Agent
+> **视频简介 (SC)**：你以为 AI 侧边栏只是个聊天框？真相远比这强大。本集带你深入 AI IDE 的神经中枢，拆解上下文层级，实测原生接口与终端调度的双重威力。教你如何放权而不失控，让 AI 真正成为你的数字化总调度师。
+> **影片簡介 (TC)**：你以為 AI 側邊欄只是個聊天框？真相遠比這強大。本集帶你深入 AI IDE 的神經中樞，拆解上下文層級，實測原生 API 與終端機調度的雙重威力。教你如何放權而不失控，讓 AI 真正成為你的數位化總調度師。
+> **Video Description (EN)**: Think the AI sidebar is just a chat box? The truth is much more powerful. This episode dives into the nerve center of the AI IDE, deconstructing context hierarchies and testing the dual power of native APIs and terminal scheduling. Learn how to delegate without losing control, turning AI into your true digital chief dispatcher.

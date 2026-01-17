@@ -29,6 +29,7 @@ Whenever you finish editing or creating a lesson file (e.g., `M1L3.md`), you MUS
 - **Concept Mapping**: Ensure terms match `chinese-terminology-checker/GLOSSARY.md`.
 - **SC Tone**: Use Mainland China terms (e.g., 资源管理器, 终端, 文件夹, 项目).
 - **TC Tone**: Use Taiwan terms (e.g., 檔案總管, 終端機, 資料夾, 專案).
+- **Formatting Rule**: Do not apply bold formatting (`**`) to terms enclosed in quotes (`""`, `「」`) or brackets. (e.g., Avoid `**"Term"**`).
 - **Global Consist**: If a specific metaphor is used (e.g., "AI Ready Engineer"), ensure it's consistently translated and used across all modules.
 
 ## 4. Logic & Flow Consistency (逻辑与讲述一致性)

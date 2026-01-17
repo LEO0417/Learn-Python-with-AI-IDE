@@ -15,7 +15,12 @@ This skill encapsulates the core teaching philosophy and standards for creating 
     - No "Label Drift": Use consistent terms for the same actions.
     - No "Implicit Assumptions": Explain underlying physical rules (e.g., file extensions).
 
-## 2. Lesson Structure (7-Stage Logic)
+## 2. Curriculum Strategy (三级火箭)
+- **Module 1 (AI-Ready)**: Overcome psychological barriers. Terminal, Env, IDE, Basic Collaboration.
+- **Module 2 (Python Foundation)**: Build courage & capability. Learn Python core (ref: Andrew Ng) *with* the AI Agent. Focus on the **Human-AI Loop**.
+- **Module 3 (Stanford Bridge)**: Specialized training for **Stanford CS146S**. Advanced AI interaction & specific Python skills (APIs).
+
+## 3. Lesson Structure (7-Stage Logic)
 Each lesson should ideally follow this flow:
 1.  **Backtrack (前修回顾)**: Connect to the previous lesson.
 2.  **Today's Teaser (今日预告)**: Establish motivation.
