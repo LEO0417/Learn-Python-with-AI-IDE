@@ -70,3 +70,21 @@ Learn Python with AI IDE | Module1 Lesson8 AI Sidebar Agent
 > **视频简介 (SC)**：你以为 AI 侧边栏只是个聊天框？真相远比这强大。本集带你深入 AI IDE 的神经中枢，拆解上下文层级，实测原生接口与终端调度的双重威力。教你如何放权而不失控，让 AI 真正成为你的数字化总调度师。
 > **影片簡介 (TC)**：你以為 AI 側邊欄只是個聊天框？真相遠比這強大。本集帶你深入 AI IDE 的神經中樞，拆解上下文層級，實測原生 API 與終端機調度的雙重威力。教你如何放權而不失控，讓 AI 真正成為你的數位化總調度師。
 > **Video Description (EN)**: Think the AI sidebar is just a chat box? The truth is much more powerful. This episode dives into the nerve center of the AI IDE, deconstructing context hierarchies and testing the dual power of native APIs and terminal scheduling. Learn how to delegate without losing control, turning AI into your true digital chief dispatcher.
+
+---
+
+用AI IDE学Python｜第一章 第九课｜如何检查 AI 的作业？验证、反馈与纠偏
+用AI IDE學Python｜第一章 第九課｜如何檢查 AI 的作業？驗證、回饋與糾偏
+Learn Python with AI IDE | Module1 Lesson9 How to Check AI's Work
+> **视频简介 (SC)**：开启了 AI 的“全速模式”后，你是否就此高枕无忧了？恰恰相反。本集教你从“一键生成”到“深度反馈”的转变。掌握运行验证、白话审计等实战技能，确保你始终是项目的最高主裁，让 AI 真正听懂你的意图。
+> **影片簡介 (TC)**：開啟了 AI 的「全速模式」後，你是否就此高枕無憂了？恰恰相反。本集教你從「一鍵生成」到「深度回饋」的轉變。掌握運行驗證、白話審計等實戰技能，確保你始終是專案的最高主裁，讓 AI 真正聽懂你的意圖。
+> **Video Description (EN)**: After enabling AI's "Full Speed Mode," can you just relax? Quite the opposite. This episode teaches you the transition from "one-click generation" to "deep feedback." Master verification and plain-language auditing to ensure you remain the ultimate judge and make AI truly understand your intent.
+
+---
+
+用AI IDE学Python｜第一章 第十课｜Module 1 全局复盘
+用AI IDE學Python｜第一章 第十課｜Module 1 全局複盤
+Learn Python with AI IDE | Module1 Lesson10 Global Review
+> **视频简介 (SC)**：恭喜通关第一章！在踏入 Python 语法森林前，我们需要最后一次起飞前检查。本集带你全局复盘 Module 1 的工程基石，审计你的标准工作台与协作心态。备好你的装备，拿稳这张通往核心编程世界的入场券。
+> **影片簡介 (TC)**：恭喜通關第一章！在踏入 Python 語法森林前，我們需要最后一次起飛前檢查。本集帶你全局複盤 Module 1 的工程基石，審計你的標準工作台與協作心態。備好你的裝備，拿穩這張通往核心編程世界的入場券。
+> **Video Description (EN)**: Congratulations on completing Module 1! Before venturing into the Python syntax forest, we need one final pre-flight check. This episode reviews the engineering foundations of Module 1, auditing your standard workbench and collaboration mindset. Gear up and grab your ticket to the heart of the programming world.
