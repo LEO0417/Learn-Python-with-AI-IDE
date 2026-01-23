@@ -5,7 +5,7 @@ description: Create a new lesson file based on the standard 7-stage structure.
 To create a new lesson, please provide the Module number, Lesson number, and Title.
 I will then:
 1.  Verify the Module and Lesson order.
-2.  Use the `lesson-scaffold` skill to create the base structure.
+2.  Use the `lesson-ops` skill (Scaffold section) to create the base structure.
 3.  Apply the teaching philosophy from `lesson-authoring-guide`.
 
 Steps:

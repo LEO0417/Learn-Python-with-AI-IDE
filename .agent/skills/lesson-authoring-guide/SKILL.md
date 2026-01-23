@@ -15,10 +15,13 @@ This skill encapsulates the core teaching philosophy and standards for creating 
     - No "Label Drift": Use consistent terms for the same actions.
     - No "Implicit Assumptions": Explain underlying physical rules (e.g., file extensions).
 
-## 2. Curriculum Strategy (三级火箭)
-- **Module 1 (AI-Ready)**: Overcome psychological barriers. Terminal, Env, IDE, Basic Collaboration.
-- **Module 2 (Python Foundation)**: Build courage & capability. Learn Python core (ref: Andrew Ng) *with* the AI Agent. Focus on the **Human-AI Loop**.
-- **Module 3 (Stanford Bridge)**: Specialized training for **Stanford CS146S**. Advanced AI interaction & specific Python skills (APIs).
+## 2. Curriculum Strategy: Dual-Track Architecture (双主轨架构)
+- **Foundational Track (Module-based)**:
+    - **Module 1 (The AI-Ready Engineer)**: Overcome psychological barriers. Terminal/Env, path awareness, and the authorization-based collaboration protocol.
+    - **Module 2 (Python Essentials)**: Full alignment with Andrew Ng's core concepts. Focus on logic chains and debugging over rote memorization.
+    - **Advanced Modules**: API integration, automation scripts, and data flow handling.
+- **Practical Track (CS146S Stanford Series)**:
+    - Apply foundational skills immediately to project-based logic (Agents, RAG, Vector DBs) following the Stanford CS146S project logic.
 
 ## 3. Lesson Structure (7-Stage Logic)
 Each lesson should ideally follow this flow:

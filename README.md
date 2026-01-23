@@ -1,48 +1,70 @@
 # Learn Python with AI IDE
 
-> **从“科技开箱者”到“全能 AI 工程师”：掌握 AI 时代的协作主权**
+> **從「科技開箱者」到「全能 AI 工程師」：掌握 AI 時代的協作主權**
 > **From "Black Box User" to "Versatile AI Engineer": Master the Synergy of Code and AI**
 
 ---
 
-## 📖 课程总论 / Course Introduction
+## 📖 課程願景與理念 / Vision & Philosophy
 
-欢迎加入《Learn Python with AI IDE》。这不仅仅是一门 Python 编程课，更是一套响应 AI 范式革命的工程训练体系。我们拒绝低幼化的教育模式和虚浮的文学隐喻，坚持以**严肃、硬核、专业**的工程师态度，带你构建跨越多个维度的核心竞争力。
+歡迎加入《Learn Python with AI IDE》。這不僅僅是一門 Python 程式設計課，更是一套回應 AI 範式革命的工程訓練體系。我們拒絕低幼化的教育模式和虛浮的文學隱喻，堅持以**嚴肅、硬核、專業**的工程師態度，帶你構建跨越多個維度的核心競爭力。
 
-### 核心体系：双主轨架构 (Dual-Track Architecture)
-本课程体系采用“基础构建”与“实战演练”深层嵌套的双主轨设计：
-
-1. **基础主轨 (Module-based)**：
-   - **Module 1 (The AI-Ready Engineer)**：从系统终端与隔离环境切入，建立工程底座。掌控终端、理解解释器逻辑。
-   - **Module 2 (Python Essentials)**：在 AI 辅助下全量对齐 Andrew Ng 课程的核心知识点。
-   - **未来进阶**：涵盖 API 集成、自动化脚本、数据流处理等现代开发核心。
-
-2. **实战主轨 (CS146S Stanford Series)**：
-   遵循斯坦福 CS146S 项目制逻辑，将基础 Module 学到的技能即时应用于 Agent 构建、RAG 检索增强、向量数据库等前沿 AI 应用实战中。
-
-### 我们的教学理念 (Pedagogy Philosophy)
-- **工具主权 (Tool Sovereignty)**：你和 AI 的关系是“授权者与执行者”。AI 负责执行，你负责 **Approve**。
-- **工程成熟度 (Engineering Maturity)**：强调环境隔离、路径感知与版本控制，确保作品是工业级系统。
-- **底层透视 (Raw Logic)**：我们不掩盖复杂性，引导你观察“影子终端”中的真实命令。
+### 核心教學理念 (Core Pedagogy)
+- **工具主權 (Tool Sovereignty)**：在 Antigravity 中，你和 AI 的關係是「授權者與執行者」。AI 負責自動化執行，但每一次關鍵操作都必須經過你的 **Approve**（授權）。主權在於掌握「允許它發生」的權力。
+- **工程成熟度 (Engineering Maturity)**：比程式碼更重要的是工程直覺。我們強調環境隔離（虛擬環境）、路徑感知（絕對/相對路徑）與版本控制 (Git)，確保你的作品是經得起推敲的工業級系統。
+- **底層透視 (Raw Logic)**：我們不掩蓋複雜性。即使 AI 在從事即時自動化，我們也會引導你觀察「影子終端機」中的真實指令。只有理解底層，才能駕馭頂層。
 
 ---
 
-## 🤖 Agent 标准与指令 (Standards & Skills)
-- **教学指南**：`.agent/skills/lesson-authoring-guide/SKILL.md` (核心教学法与基调)
-- **本地技能**：`.agent/skills/` (脚手架、同步逻辑、连贯性检查)
-- **快捷指令 (Workflows)**：
-    - `/sl` (Scaffold Lesson)：自动生成 7 阶段课程骨架。
-    - `/cc` (Continuity Check)：执行课程连贯性与规范自检。
-    - `/sync` (Sync Office Code)：同步斯坦福官方参考代码。
-    - `/git` (Safe Commit)：标准中英双语提交。
-    - `/ug` (Update Guide)：将技术洞察同步至使用指南。
+## 🏗️ 核心體系：雙主軌架構 (Dual-Track Architecture)
 
-## 📂 项目文档 (Project Docs)
-- **核心准则 (Laws)**: `.agent/rules/` (包含系统法与教学法约束)
-- **状态 (State)**: `docs/PROJECT_STATE.md` (课程大纲、进度追踪、知识对标)
-- **使用指南**: `docs/使用指南/Agent_Usage_Guide.md`
+本課程體系採用「基礎構建」與「實戰演練」深層嵌套的雙主軌設計：
 
-## 🏗️ 课程结构 (Curriculum Structure)
-- **课程内容**：`curriculum/`
-- **官方快照**：`references/office-code/`
-- **参考源**：`references/ng_lesson/`
+### 1. 基礎主軌 (Foundational Track - Module-based)
+- **Module 1 (The AI-Ready Engineer)**：從系統終端機與隔離環境切入，建立工程底座。掌控終端機、理解直譯器邏輯，建立基於「授權」的自動化協作協議。
+- **Module 2 (Python Essentials)**：在 AI 輔助下全量對應 Andrew Ng 課程的核心知識點。重點在於理解邏輯鏈條與除錯能力，而非死記硬背語法。
+- **未來進階 (Advanced)**：涵蓋 API 整合、自動化腳本、資料串流處理等現代開發核心。
+
+### 2. 實戰主軌 (Practical Track - CS146S Stanford Series)
+遵循史丹佛 **CS146S** 專案制邏輯，將基礎 Module 學到的技能即時應用於 **Agent 構建**、**RAG 檢索增強**、**向量資料庫**等前沿 AI 應用實務中。
+
+---
+
+## 🤖 AI Agent 系統 (The Antigravity Guide)
+
+本項目深度集成了 AI Agent 輔佐開發，由一系列規則 (Rules)、技能 (Skills) 與工作流 (Workflows) 驅動。
+
+### 核心配置 (Internal)
+- **Persona**: **"The Antigravity Guide"** —— 專業、嚴謹、硬核的工程導師。
+- **Rules**: `.agent/rules/` (包含 `corelaws.md` 系統法與 `pedagogy.md` 教學法)。
+- **Skills**: `.agent/skills/` (包含課程編寫指南、Git 協作規範等)。
+
+### 快捷指令 (Workflows)
+在 Antigravity 中可以使用以下快捷指令觸發自動化任務：
+- `/sl` (**Scaffold Lesson**): 按照 7 階段標準結構自動生成新課程。
+- `/cc` (**Continuity Check**): 執行課程連貫性、標題與技術細節自檢。
+- `/git` (**Safe Commit**): 執行標準的中英雙語 Git 提交與環境審計。
+- `/sync` (**Sync Office Code**): 同步史丹佛 CS146S 官方參考代碼倉庫。
+- `/ug` (**Update Guide**): 將最新的技術實踐同步至 `Agent_Usage_Guide.md`。
+
+---
+
+## 📂 項目導覽 (Project Navigation)
+
+- **課程內容 (Curriculum)**: `curriculum/` —— 包含 Module 1 至 Module 3 的全部教學檔案。
+- **項目狀態 (State)**: `docs/PROJECT_STATE.md` —— 課程大綱、知識點對標與開發進度。
+- **參考資料 (References)**:
+  - `references/office-code/`: 史丹佛課程官方程式碼快照。
+  - `references/ng_lesson/`: DeepLearning.AI 課程內容對標參考。
+- **技術文件 (Docs)**: `docs/使用指南/Agent_Usage_Guide.md` —— Agent 使用深度指南。
+
+---
+
+## 🚀 開始學習
+
+1. **環境審計**: 確保已安裝 Miniconda 並建立 `ai_course` 環境。
+2. **啟動 Agent**: 打開本專案，Agent 將自動讀取 `.agent/` 目錄下的規則並就緒。
+3. **進入 M1L1**: 從 `curriculum/Module-1/` 開始你的 AI 工程師進化之旅。
+
+---
+*Powered by Antigravity Agent - Transforming the way we learn engineering.*

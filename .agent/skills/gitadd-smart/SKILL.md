@@ -1,5 +1,5 @@
 ---
-name: gitadd-collaboration
+name: gitadd-smart
 description: Standards for Git operations, including bilingual commit messages and safety checks for sensitive or redundant files.
 ---
 

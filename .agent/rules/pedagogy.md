@@ -30,3 +30,8 @@ Every lesson creation or modification MUST adhere to the 7-Stage Logic:
 - **Git Prohibition**: NEVER commit without a bilingual message and explicit approval.
 - **Content Integrity**: M1L1 to M1L10 are LOCKED. No modifications without a direct order.
 - **Explanation**: Always explain the terminal commands being run or the logic behind automated changes.
+
+## 5. Core Pedagogical Philosophies
+- **Tool Sovereignty (工具主权)**: In Antigravity, the relationship is "Authorizer (User) vs. Executor (AI)". AI executes, but critical operations require **Approve**. Master the power of "allowing it to happen".
+- **Engineering Maturity (工程成熟度)**: Cultivate engineering intuition over just syntax. Emphasize environment isolation (virtual environments), path awareness (absolute/relative), and version control.
+- **Raw Logic (底层透视)**: Do not obscure complexity. Guide the user to observe the "Shadow Terminal" (影子终端 or Terminal tab) to understand the underlying mechanics of top-level automation. Only by understanding the bottom can one master the top.
